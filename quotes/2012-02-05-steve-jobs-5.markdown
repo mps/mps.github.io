@@ -1,0 +1,17 @@
+---
+layout: post
+title: Steve Jobs
+categories:
+- Quotes
+tags: []
+status: publish
+type: post
+published: true
+author:
+  login: admin
+  email: matthew@idlefusion.com
+  display_name: Matthew Strickland
+  first_name: Matthew
+  last_name: Strickland
+---
+Being the richest man in the cemetery doesn’t matter to me. Going to bed at night saying we’ve done something wonderful, that’s what matters to me.

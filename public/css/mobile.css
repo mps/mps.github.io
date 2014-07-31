@@ -1,0 +1,28 @@
+/* Blog post or page title */
+.page-title,
+.post-title {
+  border: 0;
+  border: 0;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+
+h2, h3 {  
+  border: 0;
+  margin: 25px 10px 0px 0px;
+  padding-bottom: 10px;
+}
+
+.menu {
+  display: none;
+}
+
+.masthead {
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
+}
+
+.footer {
+  margin-top: 1rem;
+}

@@ -1,0 +1,102 @@
+body {
+  color: #2B2B2B;
+}
+
+a {
+  color: #007AFF;
+  text-decoration: none;
+}
+
+/*a:hover,
+a:focus {
+  text-decoration: none;
+}*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+h2 {
+  margin: 50px 0px 20px 0px;
+}
+
+h3 {
+  margin: 50px 0px 20px 0px;
+}
+
+.header a{
+  color: #444;
+  text-decoration: none;
+  transition: color 0.25s ease-in;
+  -webkit-transition: color 0.25s ease-in;
+}
+
+.header a:hover, .header a:hover {
+  color: #007AFF;
+}
+
+.name a {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu {
+  padding: 0;
+  margin: 20px 0 0 0;
+  text-transform: uppercase;
+  float: right;
+}
+.menu li {
+  display: inline;
+  padding-left: 15px;
+}
+
+.post-date {
+  padding-top: 0px;
+  text-transform: uppercase;
+  color: #999999;
+}
+
+/* Blog post or page title */
+.page-title,
+.post-title,
+.post-title a {
+  color: #444444;
+}
+
+.page-title,
+.post-title {
+  padding: 10px 10px 10px 23px;
+  border-left: 7px solid #d0d0d0;
+  margin: 40px -30px 30px -30px;
+}
+
+/* Blog post that's a quote */
+.quote-title,
+.quote-title a {
+  color: #777777;
+  border-left: none;
+}
+
+.quote-title {
+  margin-top: 0;
+}
+
+.masthead-title {
+  border-left: none;
+}
+
+.masthead {
+  padding-top:    0rem;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+}
+
+::selection {
+  background-color: #2B2B2B;
+  color: #ffffff;
+}
+
+.pagination {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

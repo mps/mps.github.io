@@ -1,0 +1,17 @@
+---
+layout: post
+title: Steve Jobs
+categories:
+- Quotes
+tags: []
+status: publish
+type: post
+published: true
+author:
+  login: admin
+  email: matthew@idlefusion.com
+  display_name: Matthew Strickland
+  first_name: Matthew
+  last_name: Strickland
+---
+And it comes from saying no to 1,000 things to make sure we don’t get on the wrong track or try to do too much. We’re always thinking about new markets we could enter, but it’s only by saying no that you can concentrate on the things that are really important.
