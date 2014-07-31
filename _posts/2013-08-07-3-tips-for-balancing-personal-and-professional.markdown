@@ -14,7 +14,7 @@ author:
   first_name: Matthew
   last_name: Strickland
 ---
-<a href="http://mstrick.com/wp-content/uploads/2013/08/ella_letter.jpg"><img class="alignnone size-medium wp-image-662" alt="ella_letter" src="../assets/ella_letter-300x300.jpg" width="300" height="300" /></a>
+<img class="alignnone size-medium wp-image-662" alt="ella_letter" src="../assets/ella_letter-300x300.jpg" width="300" height="300" />
 
 The image above is a text that my wife sent as she wrote down what my daughter wanted to say to me.  Just before this, I wrote my wife a text that was for my daughter telling her how special she was and how much she meant to me.
 

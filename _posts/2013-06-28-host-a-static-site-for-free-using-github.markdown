@@ -31,13 +31,13 @@ There are a few things you will need to get started:
 
 The first thing you will need to do is log into your GitHub account and create a new Repository.  If you are new to Git, feel free to think of a Repository as just a folder filled with your code.
 
-<a href="http://mstrick.com/wp-content/uploads/2013/06/Screen-Shot-2013-06-28-at-8.30.49-AM.png"><img class="alignnone size-full wp-image-308" alt="Screen Shot 2013-06-28 at 8.30.49 AM" src="../assets/Screen-Shot-2013-06-28-at-8.30.49-AM.png" width="374" height="117" /></a>
+<img class="alignnone size-full wp-image-308" alt="Screen Shot 2013-06-28 at 8.30.49 AM" src="../assets/Screen-Shot-2013-06-28-at-8.30.49-AM.png" width="374" height="117" />
 
 &nbsp;
 
 From here, you will need to give your Repository a name.  Unless you know Git, you can feel free to ignore the other options.
 
-<a href="http://mstrick.com/wp-content/uploads/2013/06/Screen-Shot-2013-06-28-at-8.31.23-AM.png"><img class="alignnone size-full wp-image-307" alt="Screen Shot 2013-06-28 at 8.31.23 AM" src="../assets/Screen-Shot-2013-06-28-at-8.31.23-AM.png" width="872" height="495" /></a>
+<img class="alignnone size-full wp-image-307" alt="Screen Shot 2013-06-28 at 8.31.23 AM" src="../assets/Screen-Shot-2013-06-28-at-8.31.23-AM.png" width="872" height="495" />
 
 &nbsp;
 
@@ -45,7 +45,7 @@ GitHub uses a service called [GitHub Pages](http://pages.github.com/) to host yo
 
 So the next step is to create a branch called 'gh-pages' by clicking on the drop down called branch:master and typing 'gh-pages' into the field.
 
-<a href="http://mstrick.com/wp-content/uploads/2013/06/Screen-Shot-2013-06-28-at-8.31.37-AM.png"><img class="alignnone size-full wp-image-306" alt="Screen Shot 2013-06-28 at 8.31.37 AM" src="../assets/Screen-Shot-2013-06-28-at-8.31.37-AM.png" width="623" height="480" /></a>
+<img class="alignnone size-full wp-image-306" alt="Screen Shot 2013-06-28 at 8.31.37 AM" src="../assets/Screen-Shot-2013-06-28-at-8.31.37-AM.png" width="623" height="480" />
 
 &nbsp;
 
@@ -53,19 +53,19 @@ Now that you have a 'gh-pages' branch, it is time to create your content.  If y
 
 Click on the plus icon next to your Repository's name to create a new file called index.html
 
-<a href="http://mstrick.com/wp-content/uploads/2013/06/Screen-Shot-2013-06-28-at-8.31.52-AM.png"><img class="alignnone size-full wp-image-305" alt="Screen Shot 2013-06-28 at 8.31.52 AM" src="../assets/Screen-Shot-2013-06-28-at-8.31.52-AM.png" width="624" height="188" /></a>
+<img class="alignnone size-full wp-image-305" alt="Screen Shot 2013-06-28 at 8.31.52 AM" src="../assets/Screen-Shot-2013-06-28-at-8.31.52-AM.png" width="624" height="188" />
 
 &nbsp;
 
 Add your content to the index.html file we've created.
 
-<a href="http://mstrick.com/wp-content/uploads/2013/06/Screen-Shot-2013-06-28-at-8.33.06-AM.png"><img class="alignnone size-full wp-image-304" alt="Screen Shot 2013-06-28 at 8.33.06 AM" src="../assets/Screen-Shot-2013-06-28-at-8.33.06-AM.png" width="997" height="445" /></a>
+<img class="alignnone size-full wp-image-304" alt="Screen Shot 2013-06-28 at 8.33.06 AM" src="../assets/Screen-Shot-2013-06-28-at-8.33.06-AM.png" width="997" height="445" />
 
 &nbsp;
 
 The last thing that I like to do is to make the 'gh-pages' branch the default branch for the Repository.  To do this, just click on settings for your Repository and adjust the property there.
 
-<a href="http://mstrick.com/wp-content/uploads/2013/06/Screen-Shot-2013-06-28-at-8.33.26-AM.png"><img class="alignnone size-full wp-image-303" alt="Screen Shot 2013-06-28 at 8.33.26 AM" src="../assets/Screen-Shot-2013-06-28-at-8.33.26-AM.png" width="417" height="223" /></a>
+<img class="alignnone size-full wp-image-303" alt="Screen Shot 2013-06-28 at 8.33.26 AM" src="../assets/Screen-Shot-2013-06-28-at-8.33.26-AM.png" width="417" height="223" />
 
 &nbsp;
 

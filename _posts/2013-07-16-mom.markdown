@@ -16,7 +16,7 @@ author:
 ---
 Today is my Mom's birthday and this post is dedicated to her.
 
-<a href="http://mstrick.com/wp-content/uploads/2013/07/mom.jpg"><img class="alignnone size-medium wp-image-572" alt="mom" src="../assets/mom-300x300.jpg" width="300" height="300" /></a>
+<img class="alignnone size-medium wp-image-572" alt="mom" src="../assets/mom-300x300.jpg" width="300" height="300" />
 
 ## Earliest Memories
 

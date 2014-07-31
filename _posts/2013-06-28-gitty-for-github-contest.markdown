@@ -22,7 +22,7 @@ Today marks six weeks since the release of [Gitty for GitHub](http://gittyapp.co
 
 If this is the first time you are hearing about Gitty, then here's a list of some features you can expect:
 
-<a href="http://mstrick.com/wp-content/uploads/2013/06/app_hero.png"><img class="alignnone size-full wp-image-326" alt="app_hero" src="../assets/app_hero.png" width="1024" height="640" /></a>
+<img class="alignnone size-full wp-image-326" alt="app_hero" src="../assets/app_hero.png" width="1024" height="640" />
 
 &nbsp;
 
