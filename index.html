@@ -21,8 +21,16 @@ title: Home
       <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
 
       {{ post.content }}
+      
     {% endif %}
   </div>
+  
+  {% if forloop.first %}
+    
+    {% include app-ad.html %}
+
+  {% endif %}
+
   {% endfor %}
 </div>
 
