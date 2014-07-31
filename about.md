@@ -17,9 +17,9 @@ I am working on [my craft](http://idlefusion.com) and focusing on helping others
 
 ## A little more...
 
-I am follower of Christ. I am husband to Katie and a father to Ella and Jad. I serve at [my church](http://chestnutmountain.com) and as a board member of a [local charity](http://ssrevolution.com). I enjoy blogging about my faith, family, technology and [sports](http://georgiadogs.com).
+I am follower of Jesus. I am husband to Katie and a father to Ella and Jad. I am a [doorholder](http://passioncity.com). I enjoy blogging about my faith, family, technology and [sports](http://georgiadogs.com).
 
-By day and sometimes night, I am a Developer working on building mostly web and mobile products. Some tools I use are [.NET](http://asp.net), [Ruby](http://ruby-lang.org) and [Rails](http://rubyonrails.org), [WordPress](http://wordpress.org) and [Objective-C / iOS](http://developer.apple.com).
+By day and sometimes night, I am a Developer working on building mostly web and mobile products. Some tools I use are [Objective-C / iOS](http://developer.apple.com), [Ruby](http://ruby-lang.org) and [Rails](http://rubyonrails.org).
 
 Some of you may have arrived here because you use [Gitty.](http://gittyapp.com) Thank you for your support and helping make Gitty the best GitHub app for iOS.
 
@@ -27,10 +27,14 @@ If you are interested in hiring me to work on your project, feel free to [shoot 
 
 You can stay in touch with me by following me on Twitter
 
-Follow @strickland
+<a href="https://twitter.com/strickland" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @strickland</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-You can also find me on Google+
+You can check out my code on GitHub:
 
-You can check out my code on GitHub [@mps](http://github.com/mps)
+<iframe src="http://ghbtns.com/github-btn.html?user=mps&type=follow&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe><br>
+
+You can also find me on [Google+](https://plus.google.com/u/1/100537974733822627384).
 
 Thanks for visiting!
