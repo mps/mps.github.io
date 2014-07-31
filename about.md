@@ -3,6 +3,8 @@ layout: page
 title: About
 permalink: /about/
 ---
+![Me](/assets/bio.jpg)
+
 Thanks for stopping by and for your interest in learning a bit more about me.  If you want a high level look into what I do and how I work then I suggest you take a look at [my setup](http://mstrick.com/my-setup/).
 
 ## I am not there yet..
