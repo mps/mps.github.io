@@ -5,3 +5,8 @@ guard 'jekyll' do
   watch /.*/
   ignore /_site/
 end
+
+guard 'jekyll' do
+  watch /.*/
+  ignore /_site/
+end
