@@ -24,6 +24,10 @@
         </p>
       </div>
     </div>
+    
+  {% if page.path contains '_posts' %}
+  {% else %}
     <script type="text/javascript" src="//s3.amazonaws.com/scripts.hellobar.com/fd9554e5f4eb10bdafb3ef20040da1c707304569.js"></script>
+  {% endif %}
   </body>
 </html>
