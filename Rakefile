@@ -2,12 +2,13 @@ require 'rubygems'
 require 'chronic'
 
 desc 'create new post or bit. args: type (post, bit), title, future (# of days)'
-# rake new title="New post title goes here" future=0 
+# rake new title="New post title goes here" future=0 link="custom link goes here"
 task :new do
   
   title = ENV["title"] || "New Title"
   future = ENV["future"] || 0
   slug = title.gsub(' ','-').downcase
+  custom_link = ENV["link"] || ""
  
   if future.to_i < 3
     TARGET_DIR = "_posts"
@@ -28,6 +29,7 @@ layout: post
 title: TITLE
 published: true
 status: publish
+custom-link: CUSTOMLINK
 author:
   login: admin
   email: matthew@idlefusion.com
@@ -37,9 +39,11 @@ author:
 ---
  
 HTML
-  post.gsub!('TITLE', title)
+  post.gsub!('TITLE', title).gsub!('CUSTOMLINK', custom_link)
+
   File.open(path, 'w') do |file|
     file.puts post
   end
+
   puts "new post generated in #{path}"
 end
