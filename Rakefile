@@ -46,4 +46,7 @@ HTML
   end
 
   puts "new post generated in #{path}"
+
+  sh "subl #{path}"
+
 end
