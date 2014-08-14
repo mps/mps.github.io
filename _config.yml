@@ -13,10 +13,10 @@ url:                http://mstrick.com
 paginate:           5
 baseurl:            
 author:
-  name:             Mark Otto
-  url:              https://twitter.com/mdo
-  email:            markdotto@gmail.com
-  twitter: 		    strickland
+  name:             Matthew Strickland
+  url:              https://twitter.com/strickland
+  email:            matthew@idlefusion.com
+  twitter: 		      strickland
   github:           mps
 
 # Custom vars
