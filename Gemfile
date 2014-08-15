@@ -4,3 +4,5 @@ source 'http://rubygems.org'
 # gem install bundler
 
 gem 'chronic'
+gem 'guard-jekyll'
+gem 'jekyll'

@@ -11,7 +11,7 @@ author:
   first_name: Matthew
   last_name: Strickland
 ---
- Daisuke Wakabayashi for the Wall Street Journal:
+Daisuke Wakabayashi for the Wall Street Journal:
 
 > Apple Inc. created the blueprint for a smartphone when it covered the touch screen of its first iPhone in glass instead of plastic. Now, it is betting $700 million that sapphire, a harder and more expensive material, can replace glass and better protect future devices.
 >
