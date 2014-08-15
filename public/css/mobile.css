@@ -14,7 +14,12 @@ h2, h3 {
 }
 
 .menu {
-  display: none;
+  margin: 10px 0px 10px -15px;
+  float: none;
+}
+
+.menu a {
+  color: #007AFF;
 }
 
 .footer {
