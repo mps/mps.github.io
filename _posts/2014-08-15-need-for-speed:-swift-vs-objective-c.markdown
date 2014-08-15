@@ -2,7 +2,7 @@
 layout: post
 title: Need for Speed - Swift vs Objective-C
 published: true
-custom-link: http://google.com
+custom-link: http://www.jessesquires.com/apples-to-apples-part-two/
 date: 2014-08-15
 author:
   login: admin
