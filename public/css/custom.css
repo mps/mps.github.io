@@ -93,6 +93,8 @@ h3 {
 
 .custom-link {
   display: inline;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 
 .custom-link a {
