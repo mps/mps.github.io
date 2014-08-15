@@ -59,9 +59,64 @@ h3 {
 
 /* Blog post or page title */
 .page-title,
-.post-title,
-.post-title a {
+.post-title {
   color: #444444;
+}
+
+.post-title a {
+  font-size: 28px;
+  color: #444444;
+  text-decoration: none;
+}
+
+.post-title a:link {
+  color: #444444;
+  text-decoration: none;
+  border-color: #888;
+  border-width: 0 0 1px 0;
+  border-style: none none solid none;
+}
+
+.post-title a:visited {
+  color: #444444;
+  border-color: #888;
+  border-width: 0 0 1px 0;
+  border-style: none none solid none;
+}
+
+.post-title a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #2B2B2B;
+  border-color: #2B2B2B;
+}
+
+.custom-link {
+  display: inline;
+}
+
+.custom-link a {
+  font-size: 24px;
+  color: #007AFF;
+  text-decoration: none;
+  border: 0;
+}
+
+.custom-link a:link {
+  color: #007AFF;
+  text-decoration: none;
+  border: 0;
+}
+
+.custom-link a:visited {
+  color: #007AFF;
+  border: 0;
+}
+
+.custom-link a:hover {
+  color: white;
+  text-decoration: none;
+  border: 0;
 }
 
 .page-title,
@@ -113,14 +168,6 @@ h3 {
   margin-bottom: 4rem;
   border-top: 1px solid #d0d0d0;
   border-bottom: 1px solid #d0d0d0;
-}
-
-.custom-link {
-  display: inline;
-}
-
-.custom-link a {
-  color: #007AFF;
 }
 
 #share-this span {
