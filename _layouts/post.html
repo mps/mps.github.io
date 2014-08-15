@@ -23,7 +23,11 @@ layout: default
   </div>
 </div>
 
-{% include app-ad.html %}
+{% if page.categories contains 'wordpress' %}
+  {% include wordpress-hosting-ad.html %}
+{% else %} 
+  {% include app-ad.html %}
+{% endif %}
 
 <div class="related">
   <h2>Recent Posts</h2>
