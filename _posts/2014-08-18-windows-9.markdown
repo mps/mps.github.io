@@ -1,0 +1,22 @@
+--- 
+layout: post
+title: Windows 9
+published: true
+custom-link: http://www.zdnet.com/microsoft-to-deliver-windows-threshold-tech-preview-around-late-september-7000032668/
+date: 2014-08-18
+author:
+  login: admin
+  email: matthew@idlefusion.com
+  display_name: Matthew Strickland
+  first_name: Matthew
+  last_name: Strickland
+---
+Mary Jo Foley for ZDNet:
+
+>Microsoft is aiming to deliver a "technology preview" of its Windows "Threshold" operating system by late September or early October, according to multiple sources of mine who asked not to be named. 
+>
+>One of my contacts who has provided accurate information on Windows in the past said the Threshold tech preview will be public and available to all those interested.
+
+Windows 9 is huge for Microsoft and it is coming son.  Windows 7 was a tremendous success following the lackluster Windows Vista release.  And just as much as they needed Windows 7, I think they need Windows 9 to refine the experience that 8 lacked and provide solid footing for their PC customers.
+
+It also appears that Microsoft will follow Apple's lead and make the preview available to the public prior to release.
