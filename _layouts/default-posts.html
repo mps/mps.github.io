@@ -5,7 +5,7 @@
 
   <body>
     <div class="container content">
-<!--       <div class="masthead header">
+      <div class="masthead header">
         <ul class="menu">
           <li><a href="{{ site.baseurl }}/about">About</a></li>
           <li><a href="https://github.com/mps">GitHub</a></li>
@@ -15,23 +15,16 @@
         <h1 class="name">
           <a href="/">Matthew Strickland</a>
         </h1>
-      </div> -->
+      </div>
 
       {{ content }}
+
+      <div class="footer">
+        <p>
+          &copy; {{ site.time | date: '%Y' }} All rights reserved.
+        </p>
+      </div>
     </div>
-  
-    <footer>
-      <ul>
-        <li><a href="{{ site.baseurl }}/">Home</a></li>
-        <li><a href="{{ site.baseurl }}/about">About</a></li>
-        <li><a href="https://github.com/mps">GitHub</a></li>
-        <li><a href="https://twitter.com/strickland">Twitter</a></li>
-        <li><a href="{{ site.baseurl }}/atom">RSS</a></li>
-      </ul>
-      <p>
-        &copy; {{ site.time | date: '%Y' }} All rights reserved.
-      </p>
-    </footer>
     
 <!--   {% if page.path contains '_posts' %}
   {% else %}

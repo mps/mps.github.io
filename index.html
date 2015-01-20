@@ -3,62 +3,223 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-
-    {% if previous-post-date != post.date %}
-
-    <span class="post-date">{{ post.date | date: "%A %B %-d, %Y" }}</span>
-
-    {% endif %}
-
-    {% if post.categories contains 'quotes' %}
-      <h2 class="quote-title">
-          {{ post.content }} -  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}
-        </a>
-      </h2>
-    {% else %}      
-        <h1 class="post-title">
-          {% if post.custom-link %}
-            <a href="{{ site.baseurl }}{{ post.custom-link }}">
-              {{ post.title }}
+<section class="content container">
+  <section id="welcome-section">
+    <div class="page-header">
+      <h1>Hey!</h1>
+    </div>
+    <p class="words">I am Matthew, a software engineer living in Atlanta, Georgia. I work for <a href="http://vertigo.com">Vertigo</a> building iOS Apps and do freelance on the side. Most days you can find me writing Objective-C and Ruby. If you would like to find out more about me you can do so <a href="/about">here.</a></p>
+  </section>
+  <section id="apps-section">
+    <div class="page-header">
+      <h1>Apps</h1>
+    </div>
+    <p class="words">It is hard to believe that I started working on iOS Apps back in 2010. Below are some of the apps I have worked on. Some were for my current employer <a href="http://vertigo.com">Vertigo</a> while others were under my own personal company <a href="http://idlefusion.com">Idle Fusion</a>.</p>
+    <div class="apps">
+      <div class="row">
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/radio-disney/id327576776?mt=8" rel="external nofollow" title="Radio Disney" target="_blank">
+              <img src="./assets/img/radiodisney.png" class="img-responsive"/>
             </a>
-            <div class="custom-link">
-              <a href="{{ site.baseurl }}{{ post.url }}">
-                ★
-              </a>     
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/radio-disney/id327576776?mt=8" rel="external nofollow" target="_blank"><h4>Radio Disney</h4></a>
             </div>
-          {% else %}
-            <a href="{{ site.baseurl }}{{ post.url }}">
-              {{ post.title }}
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/golfnow-golf-gps-tracker-tee/id411930498?mt=8" rel="external nofollow" title="Golf Now" target="_blank">
+              <img src="./assets/img/golfnow.png" class="img-responsive"/>
             </a>
-          {% endif %}
-        </h1>
-
-      {{ post.content }}
-      
-    {% endif %}
-  </div>
-
-  {% assign previous-post-date = post.date %}
-
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/golfnow-golf-gps-tracker-tee/id411930498?mt=8" rel="external nofollow" target="_blank"><h4>Golf Now</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="http://gittyapp.com" rel="external nofollow" title="Gitty 2" target="_blank">
+              <img src="./assets/img/gitty-2.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="http://gittyapp.com" rel="external nofollow"><h4>Gitty 2</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/easy-digital-downloads/id625303275?mt=8" rel="external nofollow" title="Easy Digital Downloads" target="_blank">
+              <img src="./assets/img/edd.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/easy-digital-downloads/id625303275?mt=8" rel="external nofollow" target="_blank"><h4>Easy Digital Downloads</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/golf-channel/id466053027?mt=8" rel="external nofollow" title="Golf Channel Mobile" target="_blank">
+              <img src="./assets/img/gcm.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/golf-channel/id466053027?mt=8" rel="external nofollow" target="_blank"><h4>Golf Channel Mobile</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/nbc-sports-talk/id407853742?mt=8" rel="external nofollow" title="NBC Sports Talk" target="_blank">
+              <img src="./assets/img/sportstalk.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/nbc-sports-talk/id407853742?mt=8" rel="external nofollow" target="_blank"><h4>NBC Sports Talk</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/golf-channel-academy/id583390285?mt=8" rel="external nofollow" title="Golf Channel Academy" target="_blank">
+              <img src="./assets/img/gca.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/golf-channel-academy/id583390285?mt=8" rel="external nofollow" target="_blank"><h4>Golf Channel Academy</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/csn-baltimore/id893349661?mt=8" rel="external nofollow" title="CSN Baltimore" target="_blank">
+              <img src="./assets/img/csnbaltimore.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/csn-baltimore/id893349661?mt=8" rel="external nofollow" target="_blank"><h4>CSN Baltimore</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/csn-bay-area/id427649381?mt=8" rel="external nofollow" title="CSN Bay Area" target="_blank">
+              <img src="./assets/img/csnbayarea.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/csn-bay-area/id427649381?mt=8" rel="external nofollow" target="_blank"><h4>CSN Bay Area</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/csn-chicago/id427781975?mt=8" rel="external nofollow" title="CSN Chicago" target="_blank">
+              <img src="./assets/img/csnchicago.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/csn-chicago/id427781975?mt=8" rel="external nofollow" target="_blank"><h4>CSN Chicago</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="javascript:alert('No Longer on the App Store')" title="CSN Houston">
+              <img src="./assets/img/csnhouston.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="javascript:alert('No Longer on the App Store')"><h4>CSN Houston</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="javascript:alert('No Longer on the App Store')" title="CSN Local Sports">
+              <img src="./assets/img/csnlocalsports.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="javascript:alert('No Longer on the App Store')"><h4>CSN Local Sports</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/csn-new-england/id427783175?mt=8" rel="external nofollow" title="CSN New England" target="_blank">
+              <img src="./assets/img/csnnewengland.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/csn-new-england/id427783175?mt=8" rel="external nofollow" target="_blank"><h4>CSN New England</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/csn-philly/id427783832?mt=8" rel="external nofollow" title="CSN Philly" target="_blank">
+              <img src="./assets/img/csnphilly.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/csn-philly/id427783832?mt=8" rel="external nofollow" target="_blank"><h4>CSN Philly</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/csn-washington/id427784498?mt=8" rel="external nofollow" title="CSN Washington" target="_blank">
+              <img src="./assets/img/csnwashington.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/csn-washington/id427784498?mt=8" rel="external nofollow" target="_blank"><h4>CSN Washington</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/gitty-for-github-hd/id666435482?mt=8" rel="external nofollow" title="Gitty HD" target="_blank">
+              <img src="./assets/img/gitty.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/gitty-for-github-hd/id666435482?mt=8" rel="external nofollow" target="_blank"><h4>Gitty HD</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="javascript:alert('No Longer on the App Store')" title="Gitty">
+              <img src="./assets/img/gitty.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="javascript:alert('No Longer on the App Store')"><h4>Gitty</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-3">
+          <div class="app">
+            <a href="https://itunes.apple.com/us/app/babyme-slideshow/id612532871?mt=8" rel="external nofollow" title="Baby Me Slideshow" target="_blank">
+              <img src="./assets/img/babymeslideshow.png" class="img-responsive"/>
+            </a>
+            <div class="caption">
+              <a href="https://itunes.apple.com/us/app/babyme-slideshow/id612532871?mt=8" rel="external nofollow" target="_blank"><h4>Baby Me Slideshow</h4></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="writing">
+    <div class="page-header">
+      <h1>Latest Writing</h1>        
+    </div>
+    <div class="blog-index">  
+      {% assign post = site.posts.first %}
+      {% assign content = post.content %}
+      {% include post-detail.html %}
+    </div>
+  </section>
+  <section class="personal">
+    <div class="instagram">
+    <a href="http://instagram.com/strickland">Follow me on Instagram</a><br><br>
+    <!-- INSTANSIVE WIDGET --><script src="http://instansive.com/widget/js/instansive.js"></script><iframe src="http://instansive.com/widgets/cc729c1437298e72e8abdeff176a64cdae9ac3c9.html" id="instansive_cc729c1437" name="instansive_cc729c1437"  scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+    </div>
+    <div class="twitter">
+      <p style="text-align:center;margin:2em 0 -1em">
+        <a href="https://twitter.com/strickland" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @strickland</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </p>
+    </div>
+  </section>
+</section>  

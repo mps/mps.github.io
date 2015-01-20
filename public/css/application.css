@@ -1,0 +1,127 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p.words {
+  font-size: 20px;
+  line-height: 1.6em;
+}
+
+@media all and (max-width: 660px) {
+  p.words {
+    font-size: 16px;
+  line-height: 1.4em;
+  }
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 880px;
+}
+
+div.apps {
+  margin-top: 3em;
+}
+
+div.app {
+  margin-bottom: 3em;
+}
+
+@media all and (max-width: 660px) {
+  div.app {
+  margin-bottom: 1.5em;
+  }
+}
+
+div.caption a {
+  color: #007AFF;
+  display: none;
+}
+
+div.app img {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 14px;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  z-index: -2;
+}
+
+@media all and (max-width: 660px) {
+  div.app img {
+    border-radius: 10px;
+    height: 71px;
+    width: 71px;
+  }
+}
+
+div.app img.border {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+div.app a h4 {
+  display: block;
+  width: 100px;
+  height: 14px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.2em;
+  padding: 2px 0 0;
+}
+
+@media all and (max-width: 660px) {
+  div.app a h4 {
+  width: 71px;
+  }
+}
+
+section.personal {
+  margin-bottom: 2em;
+}
+
+body > footer {
+  color: #aaa;
+  text-shadow: #fff 0 1px 0;
+  font-size: 1.2em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3em;
+  margin-top: 1em;
+}
+
+body > footer a {
+  color: #aaa; 
+}
+
+body > footer a:hover {
+  color: #0881b3; 
+}
+
+body > footer li {
+  margin-right: 1em;
+  display: inline-block; 
+}
+
+body > footer li:last-child {
+  margin-right: 0; 
+}
+
+body > footer p {
+  text-align: center;
+}

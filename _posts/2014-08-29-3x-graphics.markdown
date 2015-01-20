@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: @3x graphics
+title: 3x graphics
 published: true
 custom-link: http://9to5mac.com/2014/08/29/support-for-3x-image-assets-found-in-latest-ios-8-beta-ahead-of-larger-display-iphone-6/
 date: 2014-08-29
