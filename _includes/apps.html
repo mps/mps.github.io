@@ -1,0 +1,18 @@
+{% for app in site.data.ios.apps %}
+
+{% if app.enabled %}
+
+<div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+  <div class="app">
+    <a href="{{ app.linkUrl }}" rel="external nofollow" title="{{ app.name }}" target="_blank">
+      <img src="{{ app.imageUrl }}" class="img-responsive"/>
+    </a>
+    <div class="caption">
+      <a href="{{ app.linkUrl }}" rel="external nofollow" target="_blank"><h4>{{ app.name }}</h4></a>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+{% endfor %}
