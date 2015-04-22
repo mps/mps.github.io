@@ -50,7 +50,7 @@
     },
     {
         "name": "Gitty",
-        "enabled": true,
+        "enabled": false,
         "imageUrl": "./assets/img/gitty.png",
         "linkUrl": "javascript:alert('No Longer on the App Store.  Check out Gitty 2!')"
     },
