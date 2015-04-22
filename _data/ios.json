@@ -1,6 +1,12 @@
 {
   "apps": [
     {
+        "name": “Treehouse”,
+        "enabled": true,
+        "imageUrl": "./assets/img/treehouse.png”,
+        "linkUrl": "https://itunes.apple.com/us/app/treehouse-learn-programming/id664753504"
+    },
+    {
         "name": "Radio Disney",
         "enabled": true,
         "imageUrl": "./assets/img/radiodisney.png",
