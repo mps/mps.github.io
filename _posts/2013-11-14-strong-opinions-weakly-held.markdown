@@ -18,6 +18,8 @@ I had an encounter this week that made me pause and re-evaluate things.
 
 I have never been a person who thinks it is my way or the highway, but I will admit that I have strong opinions. These opinions are forged from my experiences and I expect others to bring theirs to the table too.
 
+<!-- more -->
+
 I am not afraid to admit wrongness or even failure, I truly think you can learn and never **arrive**. Just because we disagree on the path does not mean we cannot desire the same destination.
 
 Back to my encounter...

@@ -1,49 +1,34 @@
 ---
-layout: default
-title: Home
+layout: page
+description:
 ---
 
-<section class="content container">
-  <section id="welcome-section">
-    <div class="page-header">
-      <h1>Hey!</h1>
-    </div>
-    <p class="words">I am Matthew, a Software Engineer living in Atlanta, Georgia. I work for <a href="http://teamtreehouse.com">Treehouse</a> building iOS Apps and do freelance on the side. Most days you can find me writing Objective-C and Ruby. If you would like to find out more about me you can do so <a href="/about">here.</a></p>
-  </section>
-  <section id="apps-section">
-    <div class="page-header">
-      <h1>Apps</h1>
-    </div>
-    <p class="words">It is hard to believe that I started working on iOS Apps back in 2010. Below are some of the apps I have worked on. Some were for my previous employer <a href="http://vertigo.com">Vertigo</a>, while others were under my own personal company <a href="http://idlefusion.com">Idle Fusion</a>. If you are interested, check out this <a href="https://www.linkedin.com/profile/view?id=203683539">complete list of apps.</a></p>
-    <div class="apps">
-      <div class="row">
-        {% include apps.html %}
-      </div>
-    </div>
-  </section>
-  <section class="writing">
-    <div class="page-header">
-      <h1>Latest Writing</h1>        
-    </div>
-    <div class="blog-index">  
-      {% assign post = site.posts.first %}
-      {% assign content = post.excerpt %}
-      {% include post-detail.html %}
-    </div>
-  </section>
-  <section class="personal">
-    <div class="page-header">
-      <h1>Latest Photos</h1>        
-    </div>
-    <div class="instagram">
-    <!-- INSTANSIVE WIDGET --><script src="http://instansive.com/widget/js/instansive.js"></script><iframe src="http://instansive.com/widgets/cc729c1437298e72e8abdeff176a64cdae9ac3c9.html" id="instansive_cc729c1437" name="instansive_cc729c1437"  scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
-    <a href="http://instagram.com/strickland">Follow me on Instagram</a><br><br>
-    </div>
-    <div class="twitter">
-      <p style="text-align:center;margin:2em 0 -1em">
-        <a href="https://twitter.com/strickland" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @strickland</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-      </p>
-    </div>
-  </section>
-</section>  
+{% for post in paginator.posts %}
+<div class="post-preview">
+  <h2 class="post-title">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+      {{ post.title }}
+    </a>
+  </h2>
+  <p class="post-meta">{{ post.date | date: "%A %B %-d, %Y" }}</p>
+  {{ post.excerpt | markdownify }}
+  <p><a href="{{ post.url | prepend: site.baseurl }}">Read more...</a></p>
+</div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}

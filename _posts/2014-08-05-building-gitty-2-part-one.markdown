@@ -16,6 +16,8 @@ author:
 ---
 [Gitty](http://gittyapp.com) has been a passion of mine for the last 15 months.  I created Gitty because I wanted a great [GitHub](http://github.com) experience on my iPhone and there was not one that suited my tastes.  After many long nights of coding away, I launched Gitty in May of 2013 to the world.  Gitty was well received and soon changed how people used GitHub on their iOS devices.  I even want to think it inspired the [kind folks at GitHub](http://github.com/about/team) to begin mobile views for their site. :)
 
+<!-- more -->
+
 ## iOS 7
 
 Later in the summer of 2013, [Apple](http://apple.com) announced iOS 7 to the world and I had a big decision on my hand.  I knew releasing a second version of Gitty would be premature given the launch of the first version but Gitty would need an overhaul to be up to date with this new version of iOS.  I decided to update Gitty for iOS 7 and not charge my users for it.  The update was well received, but deep down I knew there was a lot more I wanted to do with Gitty.

@@ -19,15 +19,17 @@ author:
   first_name: Matthew
   last_name: Strickland
 ---
-Today, it is with great joy that I announce the release of [Gitty for GitHub on the iPad](http://my.mstrick.com/gittyipad).  Download your copy today right [here](http://my.mstrick.com/gittyipad).
+Today, it is with great joy that I announce the release of [Gitty for GitHub on the iPad](http://my.mstrick.com/gittyipad). Download your copy today right [here](http://my.mstrick.com/gittyipad).
+
+<!-- more -->
 
 ## Why iPad?
 
-Ever since I [released Gitty for GitHub](http://mstrick.com/gitty-for-github/) back in May, the #1 question I get is "when will the iPad version be out?"  Well friends, today is that day.
+Ever since I [released Gitty for GitHub](http://mstrick.com/gitty-for-github/) back in May, the #1 question I get is "when will the iPad version be out?" Well friends, today is that day.
 
-All along, I have wanted to create an iPad version of Gitty.  I felt there was a definite need to create a great [GitHub](http://github.com) experience on the iPad.
+All along, I have wanted to create an iPad version of Gitty. I felt there was a definite need to create a great [GitHub](http://github.com) experience on the iPad.
 
-With Gitty on the iPad, it is everything you love about GitHub but for the iPad.  Instead of having to interact with a web browser, you can enjoy a full native experience as you browse your Issues, Code, Repositories and Activity.
+With Gitty on the iPad, it is everything you love about GitHub but for the iPad. Instead of having to interact with a web browser, you can enjoy a full native experience as you browse your Issues, Code, Repositories and Activity.
 
 ## In the Pipeline
 
@@ -60,6 +62,6 @@ Here are a few screenshots of what Gitty looks like for the iPad:
 
 ## Parting thoughts
 
-I hope you enjoy Gitty for the iPad as much as I do.  Today is just the beginning of its adventure but I am already thrilled with the product it is.  [Get your copy today](http://my.mstrick.com/gittyipad) and let me know your feedback in the comments.
+I hope you enjoy Gitty for the iPad as much as I do. Today is just the beginning of its adventure but I am already thrilled with the product it is. [Get your copy today](http://my.mstrick.com/gittyipad) and let me know your feedback in the comments.
 
 Thanks!

@@ -13,6 +13,8 @@ author:
 ---
 If you are visiting the site today, you may have notice a little bit of change to the layout.  I decided to switch things up a bit from a more blog centric landing page to what I am calling a handshake landing page.
 
+<!-- more -->
+
 Before:
 
 ![Before](/assets/site-before.png)

@@ -25,6 +25,8 @@ Scared?
 
 In all of this uncertainty, here are a few tips from my experience in launching Apps that may help you clarify and enjoy the experience.
 
+<!-- more -->
+
 ## Define Success, Be Realistic
 
 No one sets out in building an App thinking it won't be the next big thing. Everyone wants to create the next Instagram.
