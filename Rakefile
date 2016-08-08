@@ -31,7 +31,6 @@ task :new do
 layout: post
 title: TITLE
 published: PUBLISHED
-custom-link: CUSTOMLINK
 date: DATE
 author:
   login: admin

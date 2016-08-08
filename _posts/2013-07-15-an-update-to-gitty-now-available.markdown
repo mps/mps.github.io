@@ -15,11 +15,13 @@ author:
   first_name: Matthew
   last_name: Strickland
 ---
-A new version of Gitty has now shipped and is available as a free update in the App Store.  If you have not picked up a copy yet, you can do so [here](http://gittyapp.com).
+A new version of Gitty has now shipped and is available as a free update in the App Store. If you have not picked up a copy yet, you can do so [here](http://gittyapp.com).
 
-With this update, users can now view their personal and starred Gists.  Code diff viewing has gotten better as well.  Instead of looking at a tiny view of the code, each should render in full height now.
+With this update, users can now view their personal and starred Gists. Code diff viewing has gotten better as well. Instead of looking at a tiny view of the code, each should render in full height now.
 
-For a full list of updates, check out the release notes below.  Thanks again for your support on Gitty and as we step towards 2.0, I think you will be happier and happier.
+For a full list of updates, check out the release notes below. Thanks again for your support on Gitty and as we step towards 2.0, I think you will be happier and happier.
+
+<!-- more -->
 
 ## Release Notes
 

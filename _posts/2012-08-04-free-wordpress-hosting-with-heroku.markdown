@@ -19,6 +19,8 @@ author:
 
 Hosting Wordpress on Heroku is not only free but easy thanks to [this repository](https://github.com/mhoofman/wordpress-heroku) on GitHub.  By completing the following steps you will end up with a free WordPress site hosted on Heroku using Postgres for the backend instead of MySQL.  If you have any questions, feel free to ask in the comments or [send me a message on Twitter](http://twitter.com/strickland).
 
+<!-- more -->
+
 ## Installation
 
 Clone the repository from Github

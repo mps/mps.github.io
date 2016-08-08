@@ -16,7 +16,11 @@ author:
   name:             Matthew Strickland
   url:              https://twitter.com/strickland
   email:            matthew@idlefusion.com
-  twitter: 		      strickland
+  twitter: 		    strickland
   github:           mps
+  instagram:		strickland
 
 # Custom vars
+
+header-img: 		/img/home-bg.jpg
+excerpt_separator: <!-- more -->

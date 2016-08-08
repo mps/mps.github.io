@@ -17,6 +17,8 @@ author:
 ---
 I recently had someone inquire about creating a new iOS App and I thought I would share some of my responses. Here are the three steps I encourage each person to consider before making an App.
 
+<!-- more -->
+
 1) Research - are there apps out there that already provide the features and functionality you desire? If so, how will your idea be better? If not, is there enough of a market to warrant the app investment?
 
 2) Prototype - explore your idea down to the detail. You can do this with something as simple as PowerPoint. The idea behind prototyping is to layout visually what the app does. What does each screen look like? If I tap on this button where does it take me, etc.

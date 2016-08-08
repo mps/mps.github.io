@@ -19,6 +19,8 @@ author:
 ---
 Today is a special day for me as I get the privilege to announce the release of [Gitty for GitHub.](http://gittyapp.com) [Gitty](http://gittyapp.com) is everything you love about [GitHub](http://github.com) right in your pocket. Access all of your Issues, Repositories and even search for new ones. I hope that [Gitty](http://gittyapp.com) becomes your go to way to use [GitHub](http://github.com) on the iPhone or iPod Touch.
 
+<!-- more -->
+
 If you are interested in checking it out you can purchase your copy [here.](http://gittyapp.com)
 
 No app is released without the countless help of others so I have a few thank you's.

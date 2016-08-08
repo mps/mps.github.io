@@ -20,6 +20,8 @@ author:
 ---
 Today marks six weeks since the release of [Gitty for GitHub](http://gittyapp.com) and to celebrate, I am giving away a free copy of Gitty to one lucky reader.
 
+<!-- more -->
+
 If this is the first time you are hearing about Gitty, then here's a list of some features you can expect:
 
 <img class="alignnone size-full wp-image-326" alt="app_hero" src="../assets/app_hero.png" width="1024" height="640" />
@@ -48,9 +50,9 @@ If this is the first time you are hearing about Gitty, then here's a list of som
 * Search users and repositories
 * Stay up to date with the GitHub Blog
 
-Releasing Gitty was both a labor of love and joy.  There is no better feeling than creating something and having people find value in it.  I keep telling people that the best experience is not any money I make off of Gitty but the hundreds of people who have sent encouraging messages to me about how Gitty helps make their life easier and their development experience better.
+Releasing Gitty was both a labor of love and joy. There is no better feeling than creating something and having people find value in it. I keep telling people that the best experience is not any money I make off of Gitty but the hundreds of people who have sent encouraging messages to me about how Gitty helps make their life easier and their development experience better.
 
-To enter, just follow the steps below (tweet, follow) and you will be entered.  The contest will run until July 3rd, so enter today!
+To enter, just follow the steps below (tweet, follow) and you will be entered. The contest will run until July 3rd, so enter today!
 
 &nbsp;
 

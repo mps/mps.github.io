@@ -1,44 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="en">
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
-    <div class="container content">
-<!--       <div class="masthead header">
-        <ul class="menu">
-          <li><a href="{{ site.baseurl }}/about">About</a></li>
-          <li><a href="https://github.com/mps">GitHub</a></li>
-          <li><a href="https://twitter.com/strickland">Twitter</a></li>
-          <li><a href="{{ site.baseurl }}/atom">RSS</a></li>
-        </ul>
-        <h1 class="name">
-          <a href="/">Matthew Strickland</a>
-        </h1>
-      </div> -->
+<body>
 
-      {{ content }}
-    </div>
-  
-    <footer>
-      <ul>
-        {% if page.title != "Home" %}
-        <li><a href="{{ site.baseurl }}/">Home</a></li>
-        {% endif %}
-        <li><a href="{{ site.baseurl }}/about">About</a></li>
-        <li><a href="https://github.com/mps">GitHub</a></li>
-        <li><a href="https://twitter.com/strickland">Twitter</a></li>
-        <li><a href="{{ site.baseurl }}/atom">RSS</a></li>
-      </ul>
-      <p>
-        &copy; {{ site.time | date: '%Y' }} All rights reserved.
-      </p>
-    </footer>
-    
-<!--   {% if page.path contains '_posts' %}
-  {% else %}
-    <script type="text/javascript" src="//s3.amazonaws.com/scripts.hellobar.com/fd9554e5f4eb10bdafb3ef20040da1c707304569.js"></script>
-  {% endif %} -->
+    {% include nav.html %}
 
-  </body>
+    {{ content }}
+
+    {% include footer.html %}
+
+</body>
+
 </html>

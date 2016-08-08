@@ -2,39 +2,19 @@
 layout: page
 title: About
 permalink: /about/
+header-img: /assets/stricklands-2.jpg
 ---
-![Me](/assets/bio.jpg)
 
-Thanks for stopping by and for your interest in learning a bit more about me.  If you want a high level look into what I do and how I work then I suggest you take a look at [my setup](http://mstrick.com/my-setup/).
+# Hey!
+<hr>
 
-## I am not there yet..
+I am Matthew, a Software Engineer living in Atlanta, Georgia. I work for <a href="http://teamtreehouse.com">Treehouse</a> building iOS Apps and do freelance on the side. Most days you can find me writing Swift, Objective-C and Ruby.
 
-About pages, bios and things of the like are always hard to write. On the one hand you want to communicate who you are but at the same time they can often appear to be self aggrandizing.
+# Apps
+<hr>
 
-But if you could know one thing about me then let it be this: I am not there yet. I am a work in progress, we all are right?
+Below are some of the apps I have worked on. Some were for my previous employer <a href="http://vertigo.com">Vertigo</a>, while others were under my own personal company <a href="http://idlefusion.com">Idle Fusion</a>. If you are interested, check out this <a href="https://www.linkedin.com/profile/view?id=203683539">complete list of apps.</a>
 
-I am working on [my craft](http://idlefusion.com) and focusing on helping others.
-
-## A little more...
-
-I am follower of Jesus. I am husband to Katie and a father to Ella and Jad. I am a [doorholder](http://passioncity.com). I enjoy blogging about my faith, family, technology and [sports](http://georgiadogs.com).
-
-By day and sometimes night, I am a Developer working on building mostly web and mobile products. Some tools I use are [Objective-C / iOS](http://developer.apple.com), [Ruby](http://ruby-lang.org) and [Rails](http://rubyonrails.org).
-
-Some of you may have arrived here because you use [Gitty.](http://gittyapp.com) Thank you for your support and helping make Gitty the best GitHub app for iOS.
-
-If you are interested in hiring me to work on your project, feel free to [shoot me an email](mailto:matthew@idlefusion.com).
-
-You can stay in touch with me by following me on Twitter
-
-<a href="https://twitter.com/strickland" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @strickland</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-You can check out my code on GitHub:
-
-<iframe src="http://ghbtns.com/github-btn.html?user=mps&type=follow&size=large"
-  allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe><br>
-
-You can also find me on [Google+](https://plus.google.com/u/1/100537974733822627384).
-
-Thanks for visiting!
+<div class="row">
+  {% include apps.html %}
+</div>
