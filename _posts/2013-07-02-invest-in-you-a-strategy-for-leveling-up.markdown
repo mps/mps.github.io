@@ -21,6 +21,8 @@ Reliance on your employer to make sure you are the best in your field is a faili
 
 Do not expect others to invest in you.  It may happen but it is not definite, this is why it is imperative that today you start investing in you.
 
+<!-- more -->
+
 ## Direction, not intention
 
 We all start out with good intentions.  We want to blog, we want to read, we want to learn more.  But intentions are not enough.  "Our direction will determine our destination, not our intentions." - [Andy Stanley](http://andystanley.com)

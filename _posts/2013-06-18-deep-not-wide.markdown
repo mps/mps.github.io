@@ -20,6 +20,8 @@ Almost 10 years ago I was graduating from college, about to get married to the l
 
 As I started to dream of the future, I felt this pressure to get in somewhere on the ground level, work hard and work my way up fast. It was like everyone in my life at the time said that was the way to go. And so I did...
 
+<!-- more -->
+
 A few years went by, I was being highly successful at my job but I could not help but wonder, "is this it?" Was the goal to become a great developer, work my way up to management and eventually run the company? While that may be the path for many, I could not help but wonder if there was a different way.
 
 What if one could go really deep into their craft? Instead of trying to be good at everything, what if I could be great at <strong><em>a thing</em></strong>?

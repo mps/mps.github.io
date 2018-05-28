@@ -16,9 +16,11 @@ author:
   first_name: Matthew
   last_name: Strickland
 ---
-<img class="alignnone size-full wp-image-516" alt="dotnetspeaking" src="../assets/dotnetspeaking.png" width="765" height="544" />
-
 Last night I had the wonderful opportunity of speaking at a [local user group](http://www.meetup.com/Gwinnett-Microsoft-Users-Group/events/96829942/) about iOS Development from a .NET Developer's prospective. iOS Development can be pretty intimidated, but last's night goal was to encourage everyone to give it a shot with some nice steps of making that easier.
+
+<!-- more -->
+
+<img class="alignnone size-full wp-image-516" alt="dotnetspeaking" src="../assets/dotnetspeaking.png" width="765" height="544" />
 
 If you are interested in checking out the slides, you can do so [here](https://speakerdeck.com/strickland/a-net-developer-in-an-ios-world).
 

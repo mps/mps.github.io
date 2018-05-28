@@ -14,9 +14,11 @@ author:
   first_name: Matthew
   last_name: Strickland
 ---
-<img class="alignnone size-medium wp-image-700" alt="ella_reese" src="../assets/ella_reese-300x225.jpg" width="300" height="225" />
+Four years ago my life changed forever when we welcomed Ella Reese Strickland into the world. Not only did I become a dad, but I fell in love again all over.
 
-Four years ago my life changed forever when we welcomed Ella Reese Strickland into the world.  Not only did I become a dad, but I fell in love again all over.
+<!-- more -->
+
+<img class="alignnone size-medium wp-image-700" alt="ella_reese" src="../assets/ella_reese-300x225.jpg" width="300" height="225" />
 
 ## A few things I will never forget...
 

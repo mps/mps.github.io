@@ -17,6 +17,8 @@ author:
 ---
 One of my favorite text editors is [Sublime Text 2](http://www.sublimetext.com/2).  Not only does it provide great syntax highlighting but it also allows you to execute bash commands from the program.  In this blog, I want to walk you through how to setup [Sublime Text 2](http://www.sublimetext.com/2) to easily run your [Ruby](http://ruby-lang.org) tests.
 
+<!-- more -->
+
 ## Installation
 
 First you will need to install Sublime Text 2 which you can download [here](http://www.sublimetext.com/2).

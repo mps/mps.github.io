@@ -4,12 +4,12 @@ require 'yaml'
 
 desc 'create new post or bit. args: type (post, bit), title, future (# of days)'
 # rake new title="New post title goes here" future=0 link="custom link goes here"
-task :new do  
+task :new do
   title = ENV["title"] || "New Title"
   future = ENV["future"] || 0
   slug = title.gsub(' ','-').downcase
   custom_link = ENV["link"] || ""
- 
+
   if future.to_i > 0
     TARGET_DIR = "_drafts"
     published = "false"
@@ -17,7 +17,7 @@ task :new do
     TARGET_DIR = "_posts"
     published = "true"
   end
- 
+
   if future.to_i.zero?
     date = "#{Time.new.strftime('%Y-%m-%d')}"
     filename = "#{date}-#{slug}.markdown"
@@ -27,11 +27,10 @@ task :new do
   end
   path = File.join(TARGET_DIR, filename)
   post = <<-HTML
---- 
+---
 layout: post
 title: TITLE
 published: PUBLISHED
-custom-link: CUSTOMLINK
 date: DATE
 author:
   login: admin
@@ -40,7 +39,7 @@ author:
   first_name: Matthew
   last_name: Strickland
 ---
- 
+
 HTML
   post.gsub!('TITLE', title).gsub!('CUSTOMLINK', custom_link).gsub!('PUBLISHED', published).gsub!('DATE', date)
 
@@ -69,7 +68,7 @@ task :publish do
     puts "Invalid header format on post #{File.basename(file)}"
     Process.exit
   end
-  
+
   # parse the YAML. So much better than regex search and replaces
   headers = YAML::load("---\n"+contents[1])
   content = contents[2].strip
@@ -78,11 +77,16 @@ task :publish do
 
   # write out the modified YAML and post contents back to the original file
   File.open(file,'w+') {|file| file.puts YAML::dump(headers) + "---\n" + content + "\n"}
-  
+
   # move the file to the posts folder with a standardized filename
   target = file.gsub("_drafts", "_posts")
   mv file, target
   puts %Q{Published "#{headers['title']}" to #{target}}
+end
+
+desc "Serve the site"
+task :serve do
+  sh 'bundle exec jekyll serve --watch'
 end
 
 # Creates a user selection menu from directory listing

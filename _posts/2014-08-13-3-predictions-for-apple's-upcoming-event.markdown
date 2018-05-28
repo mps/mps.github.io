@@ -10,9 +10,11 @@ author:
   first_name: Matthew
   last_name: Strickland
 ---
-![Resizable :)](/assets/iphone5s-cases.png)
-
 We are 27 days away from the [widely](http://recode.net/2014/08/05/codered-apple-to-hold-iphone-event-on-sept-9/) [reported](http://blogs.wsj.com/digits/2014/08/05/apple-to-introduce-new-iphones-at-sept-9-event/) [Apple event](http://9to5mac.com/2014/08/05/apple-reportedly-schedules-new-iphone-event-for-sept-9/) to be held on September 9th and everyone is speculating what we can expect.  Here are 3 predictions on what Apple will announce:
+
+<!-- more -->
+
+![Resizable :)](/assets/iphone5s-cases.png)
 
 ## iOS 8 Availability
 

@@ -1,22 +1,26 @@
 # Dependencies
 markdown:           kramdown
-highlighter:        pygments
+highlighter:        rouge
 
 # Permalinks
 permalink:          /:title
 
 # Site settings
 title:              Matthew Strickland
-tagline:          	
+tagline:
 email:              matthew@idlefusion.com
 url:                http://mstrick.com
 paginate:           10
-baseurl:            
+baseurl:
 author:
   name:             Matthew Strickland
   url:              https://twitter.com/strickland
   email:            matthew@idlefusion.com
-  twitter: 		      strickland
+  twitter: 		    strickland
   github:           mps
+  instagram:		strickland
 
 # Custom vars
+
+header-img: 		/img/home-bg.jpg
+excerpt_separator: <!-- more -->
