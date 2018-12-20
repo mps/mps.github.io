@@ -13,7 +13,7 @@ I am Matthew, a Software Engineer / Leader living in Atlanta, Georgia. I current
 # Apps
 <hr>
 
-Below are some of the apps I have worked on. Some were for my previous employers <a href="http://teamtreehouse.com">Treehouse</a> & <a href="http://vertigo.com">Vertigo(now Disney Streaming Services)</a>, while others were under my own personal company <a href="http://idlefusion.com">Idle Fusion</a>. If you are interested, check out this <a href="https://www.linkedin.com/in/mps/">complete list of apps and work history.</a>
+Below are some of the apps I have worked on. Some were for my previous employers <a href="http://teamtreehouse.com">Treehouse</a> & <a href="http://vertigo.com">Vertigo (Disney Streaming Services)</a>, while others were under my own personal company <a href="http://idlefusion.com">Idle Fusion</a>. If you are interested, check out this <a href="https://www.linkedin.com/in/mps/">complete list of apps and work history.</a>
 
 <div class="row">
   {% include apps.html %}
