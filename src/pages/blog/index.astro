@@ -29,13 +29,33 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
         </h2>
         <ul class="space-y-3">
           {postsByYear[Number(year)].map((post) => (
-            <li>
-              <a
-                href={`/${post.slug}`}
-                class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
-              >
-                {post.data.title}
-              </a>
+            <li class="flex items-baseline gap-2">
+              {post.data.link ? (
+                <>
+                  <a
+                    href={post.data.link}
+                    class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {post.data.title}
+                  </a>
+                  <a
+                    href={`/${post.slug}`}
+                    class="text-neutral-400 dark:text-neutral-500 no-underline hover:text-neutral-600 dark:hover:text-neutral-300"
+                    title="Permalink"
+                  >
+                    ↗
+                  </a>
+                </>
+              ) : (
+                <a
+                  href={`/${post.slug}`}
+                  class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+                >
+                  {post.data.title}
+                </a>
+              )}
             </li>
           ))}
         </ul>
