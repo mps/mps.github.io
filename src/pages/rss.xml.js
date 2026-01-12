@@ -15,7 +15,10 @@ export async function GET(context) {
     items: sortedPosts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
-      link: `/${post.slug}`,
+      link: post.data.link || `/${post.slug}`,
+      customData: post.data.link
+        ? `<guid isPermaLink="true">${context.site}${post.slug}</guid>`
+        : undefined,
     })),
   });
 }
