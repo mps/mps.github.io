@@ -1,47 +1,45 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PostPreview from '../../components/PostPreview.astro';
-import Pagination from '../../components/Pagination.astro';
 import { getCollection } from 'astro:content';
-import { siteConfig } from '../../data/site';
-
-const PAGE_SIZE = 10;
 
 const allPosts = await getCollection('posts', ({ data }) => data.published !== false);
 const sortedPosts = allPosts.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
 
-const totalPages = Math.ceil(sortedPosts.length / PAGE_SIZE);
-const posts = sortedPosts.slice(0, PAGE_SIZE);
+// Group posts by year
+const postsByYear = sortedPosts.reduce((acc, post) => {
+  const year = new Date(post.data.date).getFullYear();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {} as Record<number, typeof sortedPosts>);
+
+const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 ---
 
 <BaseLayout title="Blog">
-  <header
-    class="intro-header"
-    style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${siteConfig.headerImg}')`}
-  >
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="page-heading text-center">
-        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-heading font-bold">
-          Blog
-        </h1>
-        <p class="text-gray-200 text-lg mt-4">
-          Thoughts on software, leadership, and life
-        </p>
-      </div>
-    </div>
-  </header>
+  <div class="max-w-2xl mx-auto px-6 pb-12">
+    <h1 class="text-2xl md:text-3xl font-semibold mb-12">Writing</h1>
 
-  <div class="max-w-3xl mx-auto px-4 py-12">
-    {posts.map((post) => (
-      <PostPreview post={post} />
+    {years.map((year) => (
+      <section class="mb-12">
+        <h2 class="text-sm uppercase tracking-wide text-neutral-500 dark:text-neutral-400 mb-4">
+          {year}
+        </h2>
+        <ul class="space-y-3">
+          {postsByYear[Number(year)].map((post) => (
+            <li>
+              <a
+                href={`/${post.slug}`}
+                class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+              >
+                {post.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     ))}
-
-    <Pagination
-      currentPage={1}
-      totalPages={totalPages}
-      nextUrl={totalPages > 1 ? '/blog/2' : undefined}
-    />
   </div>
 </BaseLayout>

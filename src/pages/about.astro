@@ -1,31 +1,43 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
-import Apps from '../components/Apps.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<PageLayout title="About" headerImg="/assets/stricklands-2.jpg">
-  <h1>Hey!</h1>
-  <hr class="my-6" />
-  <p>
-    I am Matthew, a Software Engineer / Leader living in Atlanta, Georgia. I currently work for
-    <a href="http://bignerdranch.com">Big Nerd Ranch</a> leading the iOS & Web teams there.
-    I love serving others through leading and helping organizations launch successful applications to the world.
-    If you want to find out more about me, take a look at
-    <a href="https://drive.google.com/open?id=12uFrOQlekOAWRk9C0wYrzWdtpxTqmrIh">my resume</a>.
-  </p>
+<BaseLayout title="About">
+  <div class="max-w-2xl mx-auto px-6 pb-12">
+    <h1 class="text-2xl md:text-3xl font-semibold mb-12">About</h1>
 
-  <h1 class="mt-12">Apps</h1>
-  <hr class="my-6" />
-  <p>
-    Below are some of the apps I have worked on. Some were for my previous employers
-    <a href="http://teamtreehouse.com">Treehouse</a> &
-    <a href="http://vertigo.com">Vertigo (now Disney Streaming Services)</a>,
-    while others were under my own personal company <a href="http://idlefusion.com">Idle Fusion</a>.
-    If you are interested, check out this
-    <a href="https://www.linkedin.com/in/mps/">complete list of apps and work history.</a>
-  </p>
+    <img
+      src="/matthew-strickland.jpg"
+      alt="Matthew Strickland"
+      class="w-32 h-32 rounded-full object-cover mb-8 grayscale hover:grayscale-0 transition-all duration-300"
+    />
 
-  <div class="mt-8 not-prose">
-    <Apps />
+    <div class="prose prose-neutral dark:prose-invert">
+      <p>
+        I'm Matthew Strickland, a software engineer and engineering leader based in Atlanta, Georgia.
+      </p>
+
+      <p>
+        Currently, I work on International at <a href="https://chick-fil-a.com">Chick-fil-A</a>,
+        building software to support the company's global expansion.
+      </p>
+
+      <p>
+        Previously, I led the iOS and Web engineering teams at <a href="https://bignerdranch.com">Big Nerd Ranch</a>,
+        where I helped organizations launch successful applications. Before that, I worked at
+        Vertigo (now Disney Streaming Services), building apps used by millions of people.
+      </p>
+
+      <p>
+        I love serving others through technology — helping teams grow, shipping products that matter,
+        and writing about what I learn along the way.
+      </p>
+
+      <p>
+        If you want to connect, you can find me on <a href="https://x.com/strickland">X</a>,
+        <a href="https://github.com/mps">GitHub</a>, or
+        <a href="https://linkedin.com/in/mps/">LinkedIn</a>.
+      </p>
+    </div>
   </div>
-</PageLayout>
+</BaseLayout>

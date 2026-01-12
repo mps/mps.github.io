@@ -1,90 +1,41 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import { siteConfig } from '../data/site';
 
 interface Props {
   title: string;
   date: Date;
-  headerImg?: string;
   slug: string;
 }
 
-const { title, date, headerImg, slug } = Astro.props;
-
-// Get all posts for prev/next navigation
-const allPosts = await getCollection('posts', ({ data }) => data.published !== false);
-const sortedPosts = allPosts.sort(
-  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-);
-
-const currentIndex = sortedPosts.findIndex((post) => post.slug === slug);
-const prevPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
-const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
+const { title, date, slug } = Astro.props;
 
 const formattedDate = date.toLocaleDateString('en-US', {
-  weekday: 'long',
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
-
-const backgroundImage = headerImg || siteConfig.headerImg;
 ---
 
 <BaseLayout title={title}>
-  <header
-    class="intro-header"
-    style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${backgroundImage}')`}
-  >
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="post-heading text-center">
-        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-heading font-bold">
-          {title}
-        </h1>
-        <p class="meta text-gray-200 text-lg mt-4">
-          Posted on {formattedDate}
-        </p>
-      </div>
-    </div>
-  </header>
+  <article class="max-w-2xl mx-auto px-6 pb-12">
+    <header class="mb-12">
+      <h1 class="text-2xl md:text-3xl font-semibold mb-2">{title}</h1>
+      <time class="text-neutral-500 dark:text-neutral-400 text-sm">
+        {formattedDate}
+      </time>
+    </header>
 
-  <article class="max-w-3xl mx-auto px-4 py-12">
-    <div class="prose prose-lg">
+    <div class="prose prose-neutral dark:prose-invert">
       <slot />
     </div>
 
-    <hr class="my-8 border-gray-300" />
-
-    <nav class="flex justify-between">
-      {prevPost ? (
-        <a
-          href={`/${prevPost.slug}`}
-          class="inline-flex items-center text-primary hover:underline"
-          title={prevPost.data.title}
-        >
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-          Previous Post
-        </a>
-      ) : (
-        <span />
-      )}
-      {nextPost ? (
-        <a
-          href={`/${nextPost.slug}`}
-          class="inline-flex items-center text-primary hover:underline"
-          title={nextPost.data.title}
-        >
-          Next Post
-          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      ) : (
-        <span />
-      )}
-    </nav>
+    <footer class="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+      <a
+        href="/blog"
+        class="text-neutral-500 dark:text-neutral-400 text-sm no-underline hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+      >
+        ← back to all posts
+      </a>
+    </footer>
   </article>
 </BaseLayout>

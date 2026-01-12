@@ -1,6 +1,6 @@
 export const siteConfig = {
   title: 'Matthew Strickland',
-  description: 'Software Engineer / Leader living in Atlanta, Georgia',
+  description: 'Software Engineer & Leader',
   url: 'https://mstrick.com',
   author: {
     name: 'Matthew Strickland',
@@ -9,5 +9,6 @@ export const siteConfig = {
     github: 'mps',
     instagram: 'strickland',
   },
-  headerImg: '/assets/stricklands-2.jpg',
+  role: 'International @ Chick-fil-A',
+  previousRoles: ['Big Nerd Ranch', 'Treehouse', 'Vertigo (Disney Streaming)'],
 };
