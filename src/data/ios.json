@@ -1,0 +1,118 @@
+{
+    "apps": [
+        {
+            "name": "Treehouse",
+            "enabled": true,
+            "imageUrl": "../assets/img/treehouse.png",
+            "linkUrl": "https://itunes.apple.com/us/app/treehouse-learn-programming/id664753504"
+        },
+        {
+            "name": "RadioDisney",
+            "enabled": true,
+            "imageUrl": "../assets/img/radiodisney.png",
+            "linkUrl": "https://itunes.apple.com/us/app/radio-disney/id327576776?mt=8"
+        },
+        {
+            "name": "GolfNow",
+            "enabled": true,
+            "imageUrl": "../assets/img/golfnow.png",
+            "linkUrl": "https://itunes.apple.com/us/app/golfnow-golf-gps-tracker-tee/id411930498?mt=8"
+        },
+        {
+            "name": "Gitty2",
+            "enabled": true,
+            "imageUrl": "../assets/img/gitty-2.png",
+            "linkUrl": "http://gitty.mstrick.com"
+        },
+        {
+            "name": "EasyDigitalDownloads",
+            "enabled": true,
+            "imageUrl": "../assets/img/edd.png",
+            "linkUrl": "https://itunes.apple.com/us/app/easy-digital-downloads/id625303275?mt=8"
+        },
+        {
+            "name": "GolfChannelMobile",
+            "enabled": true,
+            "imageUrl": "../assets/img/gcm.png",
+            "linkUrl": "https://itunes.apple.com/us/app/golf-channel/id466053027?mt=8"
+        },
+        {
+            "name": "NBCSportsTalk",
+            "enabled": true,
+            "imageUrl": "../assets/img/sportstalk.png",
+            "linkUrl": "https://itunes.apple.com/us/app/nbc-sports-talk/id407853742?mt=8"
+        },
+        {
+            "name": "GolfChannelAcademy",
+            "enabled": true,
+            "imageUrl": "../assets/img/gca.png",
+            "linkUrl": "https://itunes.apple.com/us/app/golf-channel-academy/id583390285?mt=8"
+        },
+        {
+            "name": "Gitty",
+            "enabled": false,
+            "imageUrl": "../assets/img/gitty.png",
+            "linkUrl": "javascript: alert('NoLongerontheAppStore.CheckoutGitty2!')"
+        },
+        {
+            "name": "BabyMeSlideshow",
+            "enabled": false,
+            "imageUrl": "../assets/img/babymeslideshow.png",
+            "linkUrl": "https://itunes.apple.com/us/app/babyme-slideshow/id612532871?mt=8"
+        },
+        {
+            "name": "GittyHD",
+            "enabled": false,
+            "imageUrl": "../assets/img/gitty.png",
+            "linkUrl": "https://itunes.apple.com/us/app/gitty-for-github-hd/id666435482?mt=8"
+        },
+        {
+            "name": "CSNBaltimore",
+            "enabled": false,
+            "imageUrl": "../assets/img/csnbaltimore.png",
+            "linkUrl": "https://itunes.apple.com/us/app/csn-baltimore/id893349661?mt=8"
+        },
+        {
+            "name": "CSNBayArea",
+            "enabled": false,
+            "imageUrl": "../assets/img/csnbayarea.png",
+            "linkUrl": "https://itunes.apple.com/us/app/csn-bay-area/id427649381?mt=8"
+        },
+        {
+            "name": "CSNChicago",
+            "enabled": false,
+            "imageUrl": "../assets/img/csnchicago.png",
+            "linkUrl": "https://itunes.apple.com/us/app/csn-chicago/id427781975?mt=8"
+        },
+        {
+            "name": "CSNHouston",
+            "enabled": false,
+            "imageUrl": "../assets/img/csnhouston.png",
+            "linkUrl": "javascript: alert('NoLongerontheAppStore')"
+        },
+        {
+            "name": "CSNLocalSports",
+            "enabled": false,
+            "imageUrl": "../assets/img/csnlocalsports.png",
+            "linkUrl": "javascript: alert('NoLongerontheAppStore')"
+        },
+        {
+            "name": "CSNNewEngland",
+            "enabled": false,
+            "imageUrl": "../assets/img/csnnewengland.png",
+            "linkUrl": "https://itunes.apple.com/us/app/csn-new-england/id427783175?mt=8"
+        },
+        {
+            "name": "CSNPhilly",
+            "enabled": false,
+            "imageUrl": "../assets/img/csnphilly.png",
+            "linkUrl": "https://itunes.apple.com/us/app/csn-philly/id427783832?mt=8"
+        },
+        {
+            "name": "CSNWashington",
+            "enabled": false,
+            "imageUrl": "../assets/img/csnwashington.png",
+            "linkUrl": "https://itunes.apple.com/us/app/csn-washington/id427784498?mt=8"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+---
+interface Props {
+  prevUrl?: string;
+  nextUrl?: string;
+  currentPage: number;
+  totalPages: number;
+}
+
+const { prevUrl, nextUrl, currentPage, totalPages } = Astro.props;
+---
+
+{(prevUrl || nextUrl) && (
+  <nav class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
+    <div>
+      {prevUrl && (
+        <a
+          href={prevUrl}
+          class="inline-flex items-center text-primary hover:underline"
+        >
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Newer Posts
+        </a>
+      )}
+    </div>
+    <span class="text-gray-500 text-sm">
+      Page {currentPage} of {totalPages}
+    </span>
+    <div>
+      {nextUrl && (
+        <a
+          href={nextUrl}
+          class="inline-flex items-center text-primary hover:underline"
+        >
+          Older Posts
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      )}
+    </div>
+  </nav>
+)}
