@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Apps from '../components/Apps.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout>
+  <header
+    class="intro-header"
+    style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${siteConfig.headerImg}')`}
+  >
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="site-heading text-center">
+        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-heading font-bold">
+          {siteConfig.title}
+        </h1>
+        <p class="text-gray-200 text-xl mt-4">
+          {siteConfig.description}
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="prose prose-lg">
+      <h1>Hey!</h1>
+      <hr class="my-6" />
+      <p>
+        I am Matthew, a Software Engineer / Leader living in Atlanta, Georgia. I currently work for
+        <a href="http://bignerdranch.com">Big Nerd Ranch</a> leading the iOS & Web teams there.
+        I love serving others through leading and helping organizations launch successful applications to the world.
+        If you want to find out more about me, take a look at
+        <a href="https://drive.google.com/open?id=12uFrOQlekOAWRk9C0wYrzWdtpxTqmrIh">my resume</a>.
+      </p>
+
+      <h1>Apps</h1>
+      <hr class="my-6" />
+      <p>
+        Below are some of the apps I have worked on. Some were for my previous employers
+        <a href="http://teamtreehouse.com">Treehouse</a> &
+        <a href="http://vertigo.com">Vertigo (now Disney Streaming Services)</a>,
+        while others were under my own personal company <a href="http://idlefusion.com">Idle Fusion</a>.
+        If you are interested, check out this
+        <a href="https://www.linkedin.com/in/mps/">complete list of apps and work history.</a>
+      </p>
+    </div>
+
+    <div class="mt-8">
+      <Apps />
+    </div>
+  </div>
+</BaseLayout>

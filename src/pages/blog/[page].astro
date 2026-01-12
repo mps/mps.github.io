@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import Pagination from '../../components/Pagination.astro';
+import { getCollection } from 'astro:content';
+import { siteConfig } from '../../data/site';
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 10;
+  const allPosts = await getCollection('posts', ({ data }) => data.published !== false);
+  const totalPages = Math.ceil(allPosts.length / PAGE_SIZE);
+
+  // Generate paths for pages 2 through totalPages (page 1 is handled by index.astro)
+  return Array.from({ length: totalPages - 1 }, (_, i) => ({
+    params: { page: String(i + 2) },
+  }));
+}
+
+const PAGE_SIZE = 10;
+
+const { page } = Astro.params;
+const currentPage = parseInt(page);
+
+const allPosts = await getCollection('posts', ({ data }) => data.published !== false);
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+const totalPages = Math.ceil(sortedPosts.length / PAGE_SIZE);
+const startIndex = (currentPage - 1) * PAGE_SIZE;
+const posts = sortedPosts.slice(startIndex, startIndex + PAGE_SIZE);
+
+const prevUrl = currentPage === 2 ? '/blog' : `/blog/${currentPage - 1}`;
+const nextUrl = currentPage < totalPages ? `/blog/${currentPage + 1}` : undefined;
+---
+
+<BaseLayout title={`Blog - Page ${currentPage}`}>
+  <header
+    class="intro-header"
+    style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${siteConfig.headerImg}')`}
+  >
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="page-heading text-center">
+        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-heading font-bold">
+          Blog
+        </h1>
+        <p class="text-gray-200 text-lg mt-4">
+          Page {currentPage} of {totalPages}
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    {posts.map((post) => (
+      <PostPreview post={post} />
+    ))}
+
+    <Pagination
+      currentPage={currentPage}
+      totalPages={totalPages}
+      prevUrl={prevUrl}
+      nextUrl={nextUrl}
+    />
+  </div>
+</BaseLayout>

@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import Pagination from '../../components/Pagination.astro';
+import { getCollection } from 'astro:content';
+import { siteConfig } from '../../data/site';
+
+const PAGE_SIZE = 10;
+
+const allPosts = await getCollection('posts', ({ data }) => data.published !== false);
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+const totalPages = Math.ceil(sortedPosts.length / PAGE_SIZE);
+const posts = sortedPosts.slice(0, PAGE_SIZE);
+---
+
+<BaseLayout title="Blog">
+  <header
+    class="intro-header"
+    style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${siteConfig.headerImg}')`}
+  >
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="page-heading text-center">
+        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-heading font-bold">
+          Blog
+        </h1>
+        <p class="text-gray-200 text-lg mt-4">
+          Thoughts on software, leadership, and life
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    {posts.map((post) => (
+      <PostPreview post={post} />
+    ))}
+
+    <Pagination
+      currentPage={1}
+      totalPages={totalPages}
+      nextUrl={totalPages > 1 ? '/blog/2' : undefined}
+    />
+  </div>
+</BaseLayout>

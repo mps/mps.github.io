@@ -1,0 +1,66 @@
+---
+const navLinks = [
+  { title: 'Blog', url: '/blog' },
+  { title: 'About', url: '/about' },
+];
+---
+
+<nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300" id="main-nav">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <a href="/" class="text-xl font-heading font-bold text-gray-dark hover:text-primary transition-colors">
+        MS
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden md:flex space-x-8">
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.url}
+              class="text-gray-600 hover:text-primary transition-colors font-body"
+            >
+              {link.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-gray-600 hover:text-primary"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <ul class="space-y-2">
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.url}
+              class="block py-2 text-gray-600 hover:text-primary transition-colors"
+            >
+              {link.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

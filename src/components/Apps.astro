@@ -1,0 +1,24 @@
+---
+import iosData from '../data/ios.json';
+
+const enabledApps = iosData.apps.filter((app: { enabled: boolean }) => app.enabled);
+---
+
+<div class="grid grid-cols-3 sm:grid-cols-4 gap-4">
+  {enabledApps.map((app: { name: string; imageUrl: string; linkUrl: string }) => (
+    <a
+      href={app.linkUrl}
+      rel="external nofollow"
+      title={app.name}
+      target="_blank"
+      class="block aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-shadow"
+    >
+      <img
+        src={app.imageUrl.replace('../assets', '/assets')}
+        alt={app.name}
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </a>
+  ))}
+</div>
