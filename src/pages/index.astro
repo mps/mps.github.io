@@ -1,52 +1,155 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Apps from '../components/Apps.astro';
+import { getCollection } from 'astro:content';
 import { siteConfig } from '../data/site';
+
+// Get recent posts for selected writing
+const allPosts = await getCollection('posts', ({ data }) => data.published !== false);
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+// Featured posts (hand-picked slugs)
+const featuredSlugs = [
+  'building-a-great-engineering-team-part-one',
+  'on-building-great-products',
+  'deep-not-wide',
+  'strong-opinions-weakly-held',
+  'awareness',
+];
+
+const featuredPosts = featuredSlugs
+  .map(slug => sortedPosts.find(post => post.slug === slug))
+  .filter(Boolean);
+
+// Recent posts (latest 5, excluding featured)
+const recentPosts = sortedPosts
+  .filter(post => !featuredSlugs.includes(post.slug))
+  .slice(0, 5);
 ---
 
 <BaseLayout>
-  <header
-    class="intro-header"
-    style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${siteConfig.headerImg}')`}
-  >
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="site-heading text-center">
-        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-heading font-bold">
-          {siteConfig.title}
-        </h1>
-        <p class="text-gray-200 text-xl mt-4">
-          {siteConfig.description}
-        </p>
-      </div>
-    </div>
-  </header>
-
-  <div class="max-w-3xl mx-auto px-4 py-12">
-    <div class="prose prose-lg">
-      <h1>Hey!</h1>
-      <hr class="my-6" />
-      <p>
-        I am Matthew, a Software Engineer / Leader living in Atlanta, Georgia. I currently work for
-        <a href="http://bignerdranch.com">Big Nerd Ranch</a> leading the iOS & Web teams there.
-        I love serving others through leading and helping organizations launch successful applications to the world.
-        If you want to find out more about me, take a look at
-        <a href="https://drive.google.com/open?id=12uFrOQlekOAWRk9C0wYrzWdtpxTqmrIh">my resume</a>.
+  <div class="max-w-2xl mx-auto px-6 pb-12">
+    <section class="mb-16">
+      <p class="text-lg md:text-xl leading-relaxed text-neutral-700 dark:text-neutral-300">
+        I build software and lead engineering teams at <a href="https://chick-fil-a.com">Chick-fil-A</a>,
+        focused on International. Previously at <a href="https://bignerdranch.com">Big Nerd Ranch</a>
+        and Vertigo (now Disney Streaming).
       </p>
+    </section>
 
-      <h1>Apps</h1>
-      <hr class="my-6" />
-      <p>
-        Below are some of the apps I have worked on. Some were for my previous employers
-        <a href="http://teamtreehouse.com">Treehouse</a> &
-        <a href="http://vertigo.com">Vertigo (now Disney Streaming Services)</a>,
-        while others were under my own personal company <a href="http://idlefusion.com">Idle Fusion</a>.
-        If you are interested, check out this
-        <a href="https://www.linkedin.com/in/mps/">complete list of apps and work history.</a>
+    <section class="mb-16">
+      <h2 class="text-sm uppercase tracking-wide text-neutral-500 dark:text-neutral-400 mb-6">
+        Selected Writing
+      </h2>
+      <ul class="space-y-3">
+        {featuredPosts.map((post) => (
+          <li>
+            <a
+              href={`/${post.slug}`}
+              class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+            >
+              {post.data.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-sm uppercase tracking-wide text-neutral-500 dark:text-neutral-400 mb-6">
+        Recent
+      </h2>
+      <ul class="space-y-3">
+        {recentPosts.map((post) => (
+          <li class="flex justify-between items-baseline gap-4">
+            <a
+              href={`/${post.slug}`}
+              class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+            >
+              {post.data.title}
+            </a>
+            <span class="text-sm text-neutral-400 dark:text-neutral-500 shrink-0">
+              {new Date(post.data.date).getFullYear()}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-6">
+        <a href="/blog" class="text-neutral-500 dark:text-neutral-400 text-sm">
+          view all posts →
+        </a>
       </p>
-    </div>
+    </section>
 
-    <div class="mt-8">
-      <Apps />
-    </div>
+    <section>
+      <h2 class="text-sm uppercase tracking-wide text-neutral-500 dark:text-neutral-400 mb-6">
+        Work
+      </h2>
+      <ul class="space-y-3">
+        <li>
+          <a
+            href="https://www.everybodyeverywhere.com"
+            class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Everybody Everywhere
+          </a>
+          <span class="text-neutral-400 dark:text-neutral-500"> — global movement platform</span>
+        </li>
+        <li>
+          <a
+            href="http://gitty.mstrick.com"
+            class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gitty
+          </a>
+          <span class="text-neutral-400 dark:text-neutral-500"> — GitHub client for iOS</span>
+        </li>
+        <li>
+          <a
+            href="https://easydigitaldownloads.com"
+            class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Easy Digital Downloads
+          </a>
+          <span class="text-neutral-400 dark:text-neutral-500"> — WordPress e-commerce</span>
+        </li>
+        <li>
+          <a
+            href="https://apps.apple.com/app/golfnow-book-tee-times-golf-gps/id359295017"
+            class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GolfNow
+          </a>
+          <span class="text-neutral-400 dark:text-neutral-500"> — tee time booking platform</span>
+        </li>
+        <li>
+          <span class="text-neutral-900 dark:text-neutral-100">Radio Disney</span>
+          <span class="text-neutral-400 dark:text-neutral-500"> — streaming app for Disney</span>
+        </li>
+        <li>
+          <span class="text-neutral-900 dark:text-neutral-100">Golf Channel</span>
+          <span class="text-neutral-400 dark:text-neutral-500"> — mobile apps and instruction platform</span>
+        </li>
+      </ul>
+      <p class="mt-6">
+        <a
+          href="https://linkedin.com/in/mps/"
+          class="text-neutral-500 dark:text-neutral-400 text-sm"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          view full work history →
+        </a>
+      </p>
+    </section>
   </div>
 </BaseLayout>

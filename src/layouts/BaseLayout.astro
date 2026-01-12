@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="en">
   <Head title={title} description={description} />
-  <body class="pt-16">
+  <body>
     <Nav />
     <main>
       <slot />
@@ -23,3 +23,12 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
+
+<script is:inline>
+  // Check for dark mode preference
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+</script>

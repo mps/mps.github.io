@@ -1,76 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply antialiased;
+  }
+
   body {
-    @apply font-body text-gray-dark;
+    @apply font-serif text-neutral-900 bg-white leading-relaxed;
+    @apply dark:text-neutral-100 dark:bg-neutral-950;
+  }
+
+  a {
+    @apply underline decoration-neutral-400 decoration-1 underline-offset-2;
+    @apply hover:decoration-neutral-600;
+    @apply dark:decoration-neutral-500 dark:hover:decoration-neutral-300;
+    @apply transition-colors duration-150;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold;
+    @apply font-semibold tracking-tight;
   }
 }
 
 @layer components {
-  .intro-header {
-    @apply bg-cover bg-center bg-no-repeat py-24 md:py-32 lg:py-40;
-    background-color: #808080;
+  .prose {
+    @apply max-w-none text-neutral-800 dark:text-neutral-200;
   }
 
-  .intro-header .post-heading h1,
-  .intro-header .page-heading h1,
-  .intro-header .site-heading h1 {
-    @apply text-white text-3xl md:text-4xl lg:text-5xl font-bold;
+  .prose a {
+    @apply text-neutral-900 dark:text-neutral-100;
   }
 
-  .intro-header .post-heading .meta,
-  .intro-header .page-heading .subheading,
-  .intro-header .site-heading .subheading {
-    @apply text-gray-200 text-lg md:text-xl mt-2;
+  .prose hr {
+    @apply border-neutral-200 dark:border-neutral-800 my-8;
   }
 
-  .post-preview {
-    @apply py-6 border-b border-gray-200;
+  .prose pre {
+    @apply bg-neutral-100 dark:bg-neutral-900 rounded-lg p-4 overflow-x-auto;
   }
 
-  .post-preview h2 {
-    @apply text-2xl md:text-3xl text-gray-dark hover:text-primary transition-colors;
+  .prose code {
+    @apply bg-neutral-100 dark:bg-neutral-900 px-1.5 py-0.5 rounded text-sm;
   }
 
-  .post-preview .post-meta {
-    @apply text-gray-light text-sm mt-2;
+  .prose pre code {
+    @apply bg-transparent p-0;
   }
 
-  .post-preview .post-subtitle {
-    @apply text-gray-600 mt-2;
+  .prose blockquote {
+    @apply border-l-2 border-neutral-300 dark:border-neutral-700 pl-4 italic;
   }
-}
-
-/* Prose overrides for markdown content */
-.prose {
-  @apply max-w-none;
-}
-
-.prose a {
-  @apply text-primary hover:underline;
-}
-
-.prose hr {
-  @apply border-gray-300 my-8;
-}
-
-/* Code block styling */
-.prose pre {
-  @apply bg-gray-100 rounded-lg p-4 overflow-x-auto;
-}
-
-.prose code {
-  @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
-}
-
-.prose pre code {
-  @apply bg-transparent p-0;
 }
