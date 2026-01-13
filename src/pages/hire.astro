@@ -1,0 +1,389 @@
+---
+// Standalone hire page with its own distinct styling
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hire Matthew Strickland for iOS, Mac, Web consulting and Engineering Coaching">
+  <meta name="author" content="Matthew Strickland">
+  <title>Hire Matthew Strickland</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #FAFAF8;
+      --color-text: #404040;
+      --color-text-light: #6B6B6B;
+      --color-accent: #0079ff;
+      --color-accent-hover: #0062cc;
+      --color-highlight-bg: #F0F7FF;
+      --color-highlight-border: #D0E4FF;
+      --color-rule: #E0DED8;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Lora', 'Times New Roman', serif;
+    }
+
+    html {
+      font-size: 18px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Subtle grain texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      z-index: 1000;
+    }
+
+    ::selection {
+      background: var(--color-accent);
+      color: white;
+    }
+
+    .container {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      padding: 80px 0 48px;
+      text-align: center;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+      color: var(--color-text);
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: var(--color-text-light);
+      font-style: italic;
+      margin: 0;
+    }
+
+    /* Main content */
+    main {
+      padding-bottom: 60px;
+      animation: fadeIn 1s ease-out 0.2s both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-rule);
+      margin: 40px 0;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 16px;
+      color: var(--color-text);
+    }
+
+    p {
+      margin: 0 0 24px;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      background-image: linear-gradient(var(--color-accent), var(--color-accent));
+      background-size: 0% 1px;
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      transition: background-size 0.3s ease;
+    }
+
+    a:hover {
+      background-size: 100% 1px;
+    }
+
+    /* Callout boxes */
+    .callout {
+      background: var(--color-highlight-bg);
+      border: 1px solid var(--color-highlight-border);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .callout p {
+      margin: 0;
+    }
+
+    .callout strong {
+      font-weight: 600;
+    }
+
+    .callout.primary {
+      background: linear-gradient(135deg, #F0F7FF 0%, #E8F4FD 100%);
+    }
+
+    /* Rate callout - special styling */
+    .rate-value {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color-text);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .rate-details {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+    }
+
+    /* CTA Button */
+    .cta-wrapper {
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: white;
+      background: var(--color-accent);
+      padding: 16px 40px;
+      border-radius: 4px;
+      text-decoration: none;
+      background-image: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 121, 255, 0.25);
+    }
+
+    .cta-button:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0, 121, 255, 0.35);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--color-rule);
+      padding: 40px 0 60px;
+      text-align: center;
+      animation: fadeIn 1s ease-out 0.4s both;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .social-links a {
+      color: var(--color-text-light);
+      font-size: 0.9rem;
+      background-image: none;
+      transition: color 0.2s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--color-accent);
+    }
+
+    .social-links a svg {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 6px;
+      fill: currentColor;
+    }
+
+    .copyright {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      margin: 0;
+    }
+
+    .copyright a {
+      color: var(--color-text-light);
+    }
+
+    .copyright a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      html {
+        font-size: 16px;
+      }
+
+      header {
+        padding: 60px 0 36px;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      .rate-value {
+        font-size: 1.5rem;
+      }
+
+      .cta-button {
+        display: block;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Hire Matthew</h1>
+      <p class="tagline">iOS, Mac, Web Consulting & Engineering Coaching</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <hr>
+
+      <section>
+        <h2>About</h2>
+        <p>
+          Hello. I'm <a href="/about">Matthew Strickland</a>.
+          I work on International Technology at <a href="https://chick-fil-a.com" rel="external">Chick-fil-A, Inc.</a>
+        </p>
+        <p>
+          Previously, I led Customer Technology at Chick-fil-A, served as Director of iOS, Mac & Web Engineering
+          at <a href="https://bignerdranch.com" rel="external">Big Nerd Ranch</a>, and was Lead iOS Engineer
+          at <a href="https://www.disneyplus.com/" rel="external">Vertigo (now Disney Streaming Services)</a>.
+          I've also shipped work for <a href="http://www.nbcsports.com" rel="external">NBC Sports</a>,
+          <a href="http://golfchannel.com" rel="external">Golf Channel</a>, and
+          <a href="/about">several other major apps</a>.
+        </p>
+        <p>
+          Lately, I've been helping Fortune 500 companies scale their apps.
+          Here's my <a href="https://github.com/mps" rel="external">GitHub</a>, if you're interested.
+        </p>
+
+        <div class="callout primary">
+          <p><strong>I am available for iOS, Mac, Web consulting and Engineering Coaching.</strong></p>
+        </div>
+      </section>
+
+      <hr>
+
+      <section>
+        <h2>Rate</h2>
+        <div class="callout">
+          <span class="rate-value">$300 / hour</span>
+          <span class="rate-details">
+            All time must be booked ahead. Half down up front. Minimum 5 hour commitment.
+          </span>
+        </div>
+      </section>
+
+      <hr>
+
+      <section>
+        <h2>Availability</h2>
+        <div class="callout">
+          <p><strong>Limited to 10 hours per week.</strong><br>
+          <span class="rate-details">Additional hours may be possible upon request.</span></p>
+        </div>
+      </section>
+
+      <hr>
+
+      <section>
+        <h2>Let's Work Together</h2>
+        <p>
+          Ready to discuss your project or have questions? I'd love to hear from you.
+        </p>
+        <div class="cta-wrapper">
+          <a href="mailto:matthew@idlefusion.com?subject=I want to hire you" class="cta-button">
+            Email Matthew
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://github.com/mps" rel="external" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/mps" rel="external" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+      <p class="copyright">
+        &copy; 2026 <a href="/">Matthew Strickland</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
