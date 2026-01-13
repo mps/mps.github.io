@@ -4,16 +4,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="About">
   <div class="max-w-2xl mx-auto px-6 pb-12">
-    <h1 class="text-2xl md:text-3xl font-semibold mb-12">About</h1>
+    <h1 class="font-display text-3xl md:text-4xl font-medium mb-12 animate-fade-in-up" style="animation-fill-mode: both;">About</h1>
 
-    <img
-      src="/matthew-strickland.jpg"
-      alt="Matthew Strickland"
-      class="w-32 h-32 rounded-full object-cover mb-8 grayscale hover:grayscale-0 transition-all duration-300"
-    />
+    <!-- Profile image with warm treatment -->
+    <div class="mb-10 animate-fade-in-up stagger-2" style="animation-fill-mode: both;">
+      <img
+        src="/matthew-strickland.jpg"
+        alt="Matthew Strickland"
+        class="w-36 h-36 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500 ring-4 ring-cream-200 dark:ring-ink-700 hover:ring-sienna-300 dark:hover:ring-sienna-700"
+      />
+    </div>
 
-    <div class="prose prose-neutral dark:prose-invert">
-      <p>
+    <div class="prose prose-neutral dark:prose-invert animate-fade-in-up stagger-3" style="animation-fill-mode: both;">
+      <p class="text-lg leading-relaxed">
         I'm Matthew Strickland, a software engineer and engineering leader based in Atlanta, Georgia.
       </p>
 
@@ -48,10 +51,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Vertigo (now Disney Streaming Services), building apps used by millions of people.
       </p>
 
-      <p>
+      <!-- Pull quote -->
+      <blockquote class="pull-quote not-prose">
         I love serving others through technology — helping teams grow, shipping products that matter,
         and writing about what I learn along the way.
-      </p>
+      </blockquote>
 
       <p>
         If you want to connect, you can find me on <a href="https://x.com/strickland">X</a>,

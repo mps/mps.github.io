@@ -20,21 +20,25 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 
 <BaseLayout title="Blog">
   <div class="max-w-2xl mx-auto px-6 pb-12">
-    <h1 class="text-2xl md:text-3xl font-semibold mb-12">Writing</h1>
+    <h1 class="font-display text-3xl md:text-4xl font-medium mb-12 animate-fade-in-up" style="animation-fill-mode: both;">Writing</h1>
 
-    {years.map((year) => (
-      <section class="mb-12">
-        <h2 class="text-sm uppercase tracking-wide text-neutral-500 dark:text-neutral-400 mb-4">
-          {year}
+    {years.map((year, yearIndex) => (
+      <section
+        class="mb-14 animate-fade-in-up"
+        style={`animation-fill-mode: both; animation-delay: ${(yearIndex + 1) * 100}ms;`}
+      >
+        <h2 class="section-label flex items-center gap-3">
+          <span>{year}</span>
+          <span class="flex-1 h-px bg-gradient-to-r from-cream-300 to-transparent dark:from-ink-700"></span>
         </h2>
         <ul class="space-y-3">
           {postsByYear[Number(year)].map((post) => (
-            <li class="flex items-baseline gap-2">
+            <li class="accent-bar py-1">
               {post.data.link ? (
-                <>
+                <span class="flex items-baseline gap-2">
                   <a
                     href={post.data.link}
-                    class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+                    class="text-cream-950 dark:text-ink-100 no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -42,16 +46,16 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
                   </a>
                   <a
                     href={`/${post.slug}`}
-                    class="text-neutral-400 dark:text-neutral-500 no-underline hover:text-neutral-600 dark:hover:text-neutral-300"
+                    class="text-cream-500 dark:text-ink-500 no-underline-effect hover:text-sienna-600 dark:hover:text-sienna-400 text-sm"
                     title="Permalink"
                   >
-                    ↗
+                    &#8599;
                   </a>
-                </>
+                </span>
               ) : (
                 <a
                   href={`/${post.slug}`}
-                  class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+                  class="text-cream-950 dark:text-ink-100 no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
                 >
                   {post.data.title}
                 </a>

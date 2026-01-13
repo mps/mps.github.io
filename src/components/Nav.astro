@@ -4,18 +4,90 @@ import { siteConfig } from '../data/site';
 
 <nav class="pt-12 md:pt-16 pb-8 md:pb-12">
   <div class="max-w-2xl mx-auto px-6">
-    <div class="flex flex-col gap-1">
-      <a href="/" class="text-xl md:text-2xl font-semibold no-underline hover:no-underline text-neutral-900 dark:text-neutral-100">
-        {siteConfig.author.name.toLowerCase()}
-      </a>
-      <div class="flex gap-4 text-neutral-500 dark:text-neutral-400">
-        <a href="/blog" class="no-underline hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
-          blog
+    <div class="flex justify-between items-start">
+      <!-- Name and tagline -->
+      <div class="flex flex-col gap-2">
+        <a
+          href="/"
+          class="group no-underline-effect"
+        >
+          <span class="font-display text-2xl md:text-3xl font-medium text-cream-950 dark:text-ink-100 tracking-tight">
+            {siteConfig.author.name.toLowerCase()}
+          </span>
+          <!-- Decorative underline -->
+          <span class="block h-0.5 w-0 group-hover:w-full bg-sienna-500 transition-all duration-300 mt-1"></span>
         </a>
-        <a href="/about" class="no-underline hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
-          about
-        </a>
+        <p class="text-sm text-cream-600 dark:text-ink-400 tracking-wide">
+          engineering &middot; writing &middot; building
+        </p>
+      </div>
+
+      <!-- Navigation links and theme toggle -->
+      <div class="flex items-center gap-6">
+        <div class="flex gap-5 text-sm text-cream-600 dark:text-ink-400">
+          <a
+            href="/blog"
+            class="no-underline-effect hover:text-cream-950 dark:hover:text-ink-100 transition-colors"
+          >
+            blog
+          </a>
+          <a
+            href="/about"
+            class="no-underline-effect hover:text-cream-950 dark:hover:text-ink-100 transition-colors"
+          >
+            about
+          </a>
+        </div>
+
+        <!-- Dark mode toggle -->
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          <!-- Sun icon (shown in dark mode) -->
+          <svg
+            class="hidden dark:block w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg
+            class="block dark:hidden w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
 </nav>
+
+<script is:inline>
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const html = document.documentElement;
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      localStorage.theme = 'light';
+    } else {
+      html.classList.add('dark');
+      localStorage.theme = 'dark';
+    }
+  });
+</script>
