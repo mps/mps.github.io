@@ -19,36 +19,37 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
 <BaseLayout title={title}>
   <article class="max-w-2xl mx-auto px-6 pb-12">
-    <header class="mb-12">
+    <header class="mb-12 animate-fade-in-up" style="animation-fill-mode: both;">
       {link ? (
-        <h1 class="text-2xl md:text-3xl font-semibold mb-2">
+        <h1 class="font-display text-2xl md:text-3xl font-medium mb-3">
           <a
             href={link}
-            class="no-underline hover:underline"
+            class="no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {title} →
+            {title}
+            <span class="text-sienna-500 ml-2">&rarr;</span>
           </a>
         </h1>
       ) : (
-        <h1 class="text-2xl md:text-3xl font-semibold mb-2">{title}</h1>
+        <h1 class="font-display text-2xl md:text-3xl font-medium mb-3">{title}</h1>
       )}
-      <time class="text-neutral-500 dark:text-neutral-400 text-sm">
+      <time class="text-cream-600 dark:text-ink-400 text-sm tracking-wide">
         {formattedDate}
       </time>
     </header>
 
-    <div class="prose prose-neutral dark:prose-invert">
+    <div class="prose prose-neutral dark:prose-invert animate-fade-in-up stagger-2" style="animation-fill-mode: both;">
       <slot />
     </div>
 
-    <footer class="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+    <footer class="mt-16 pt-8 border-t border-cream-300 dark:border-ink-700 animate-fade-in stagger-3" style="animation-fill-mode: both;">
       <a
         href="/blog"
-        class="text-neutral-500 dark:text-neutral-400 text-sm no-underline hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+        class="text-cream-600 dark:text-ink-400 text-sm no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors inline-flex items-center gap-1"
       >
-        ← back to all posts
+        <span class="text-xs">&larr;</span> back to all posts
       </a>
     </footer>
   </article>

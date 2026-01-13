@@ -30,26 +30,29 @@ const recentPosts = sortedPosts
 
 <BaseLayout>
   <div class="max-w-2xl mx-auto px-6 pb-12">
-    <section class="mb-16">
-      <p class="text-lg md:text-xl leading-relaxed text-neutral-700 dark:text-neutral-300">
-        I build software and lead engineering teams at <a href="https://chick-fil-a.com">Chick-fil-A</a>,
-        focused on International. Previously at <a href="https://bignerdranch.com">Big Nerd Ranch</a>
+    <!-- Hero intro -->
+    <section class="mb-16 animate-fade-in-up stagger-1" style="animation-fill-mode: both;">
+      <p class="text-lg md:text-xl leading-relaxed text-cream-800 dark:text-ink-200 font-body">
+        I build software and lead engineering teams at <a href="https://chick-fil-a.com" class="text-sienna-700 dark:text-sienna-400 font-medium">Chick-fil-A</a>,
+        focused on International. Previously at <a href="https://bignerdranch.com" class="text-sienna-700 dark:text-sienna-400 font-medium">Big Nerd Ranch</a>
         and Vertigo (now Disney Streaming).
       </p>
     </section>
 
-    <section class="mb-16">
-      <h2 class="text-sm uppercase tracking-wide text-neutral-500 dark:text-neutral-400 mb-6">
-        Selected Writing
-      </h2>
+    <!-- Decorative divider -->
+    <div class="hr-decorative animate-fade-in stagger-2" style="animation-fill-mode: both;"></div>
+
+    <!-- Selected Writing -->
+    <section class="mb-16 animate-fade-in-up stagger-3" style="animation-fill-mode: both;">
+      <h2 class="section-label">Selected Writing</h2>
       <ul class="space-y-3">
         {featuredPosts.map((post) => (
-          <li class="flex items-baseline gap-2">
+          <li class="accent-bar py-1">
             {post.data.link ? (
-              <>
+              <span class="flex items-baseline gap-2">
                 <a
                   href={post.data.link}
-                  class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+                  class="text-cream-950 dark:text-ink-100 font-medium no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -57,16 +60,16 @@ const recentPosts = sortedPosts
                 </a>
                 <a
                   href={`/${post.slug}`}
-                  class="text-neutral-400 dark:text-neutral-500 no-underline hover:text-neutral-600 dark:hover:text-neutral-300"
+                  class="text-cream-500 dark:text-ink-500 no-underline-effect hover:text-sienna-600 dark:hover:text-sienna-400 text-sm"
                   title="Permalink"
                 >
-                  ↗
+                  &#8599;
                 </a>
-              </>
+              </span>
             ) : (
               <a
                 href={`/${post.slug}`}
-                class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+                class="text-cream-950 dark:text-ink-100 font-medium no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
               >
                 {post.data.title}
               </a>
@@ -76,19 +79,18 @@ const recentPosts = sortedPosts
       </ul>
     </section>
 
-    <section class="mb-16">
-      <h2 class="text-sm uppercase tracking-wide text-neutral-500 dark:text-neutral-400 mb-6">
-        Recent
-      </h2>
+    <!-- Recent -->
+    <section class="mb-16 animate-fade-in-up stagger-4" style="animation-fill-mode: both;">
+      <h2 class="section-label">Recent</h2>
       <ul class="space-y-3">
         {recentPosts.map((post) => (
-          <li class="flex justify-between items-baseline gap-4">
+          <li class="flex justify-between items-baseline gap-4 accent-bar py-1">
             <span class="flex items-baseline gap-2">
               {post.data.link ? (
                 <>
                   <a
                     href={post.data.link}
-                    class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+                    class="text-cream-950 dark:text-ink-100 no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -96,116 +98,130 @@ const recentPosts = sortedPosts
                   </a>
                   <a
                     href={`/${post.slug}`}
-                    class="text-neutral-400 dark:text-neutral-500 no-underline hover:text-neutral-600 dark:hover:text-neutral-300"
+                    class="text-cream-500 dark:text-ink-500 no-underline-effect hover:text-sienna-600 dark:hover:text-sienna-400 text-sm"
                     title="Permalink"
                   >
-                    ↗
+                    &#8599;
                   </a>
                 </>
               ) : (
                 <a
                   href={`/${post.slug}`}
-                  class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+                  class="text-cream-950 dark:text-ink-100 no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
                 >
                   {post.data.title}
                 </a>
               )}
             </span>
-            <span class="text-sm text-neutral-400 dark:text-neutral-500 shrink-0">
+            <span class="text-sm text-cream-500 dark:text-ink-500 shrink-0 tabular-nums">
               {new Date(post.data.date).getFullYear()}
             </span>
           </li>
         ))}
       </ul>
-      <p class="mt-6">
-        <a href="/blog" class="text-neutral-500 dark:text-neutral-400 text-sm">
-          view all posts →
+      <p class="mt-8">
+        <a
+          href="/blog"
+          class="text-sm text-cream-600 dark:text-ink-400 no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors inline-flex items-center gap-1"
+        >
+          view all posts <span class="text-xs">&rarr;</span>
         </a>
       </p>
     </section>
 
-    <section>
-      <h2 class="text-sm uppercase tracking-wide text-neutral-500 dark:text-neutral-400 mb-6">
-        Work
-      </h2>
+    <!-- Work -->
+    <section class="animate-fade-in-up stagger-5" style="animation-fill-mode: both;">
+      <h2 class="section-label">Work</h2>
+
+      <!-- Featured work card -->
+      <div class="card mb-4">
+        <h3 class="font-display text-lg font-medium text-cream-950 dark:text-ink-100 mb-2">
+          Chick-fil-A
+        </h3>
+        <p class="text-sm text-cream-700 dark:text-ink-300 mb-3">
+          International Markets &amp; Customer Technology
+        </p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 text-sm">
+          <a href="https://www.chick-fil-a.ca" class="text-cream-600 dark:text-ink-400 no-underline-effect hover:text-sienna-600 dark:hover:text-sienna-400" target="_blank" rel="noopener noreferrer">Canada</a>
+          <span class="text-cream-400 dark:text-ink-600">&middot;</span>
+          <a href="https://www.chick-fil-a.pr" class="text-cream-600 dark:text-ink-400 no-underline-effect hover:text-sienna-600 dark:hover:text-sienna-400" target="_blank" rel="noopener noreferrer">Puerto Rico</a>
+          <span class="text-cream-400 dark:text-ink-600">&middot;</span>
+          <a href="https://www.chick-fil-a.com.sg" class="text-cream-600 dark:text-ink-400 no-underline-effect hover:text-sienna-600 dark:hover:text-sienna-400" target="_blank" rel="noopener noreferrer">Singapore</a>
+          <span class="text-cream-400 dark:text-ink-600">&middot;</span>
+          <a href="https://www.chick-fil-a.co.uk" class="text-cream-600 dark:text-ink-400 no-underline-effect hover:text-sienna-600 dark:hover:text-sienna-400" target="_blank" rel="noopener noreferrer">UK</a>
+        </div>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 text-sm mt-2">
+          <a href="https://order.chick-fil-a.com" class="text-cream-600 dark:text-ink-400 no-underline-effect hover:text-sienna-600 dark:hover:text-sienna-400" target="_blank" rel="noopener noreferrer">Web Ordering</a>
+          <span class="text-cream-400 dark:text-ink-600">&middot;</span>
+          <a href="https://www.chick-fil-a.com/delivery" class="text-cream-600 dark:text-ink-400 no-underline-effect hover:text-sienna-600 dark:hover:text-sienna-400" target="_blank" rel="noopener noreferrer">Delivery</a>
+          <span class="text-cream-400 dark:text-ink-600">&middot;</span>
+          <span class="text-cream-600 dark:text-ink-400">One &amp; Canada Apps</span>
+        </div>
+      </div>
+
+      <!-- Other work items -->
       <ul class="space-y-3">
-        <li>
-          <span class="text-neutral-900 dark:text-neutral-100">Chick-fil-A</span>
-          <span class="text-neutral-400 dark:text-neutral-500"> — </span>
-          <a href="https://www.chick-fil-a.ca" class="text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-300" target="_blank" rel="noopener noreferrer">Canada</a>
-          <span class="text-neutral-400 dark:text-neutral-500"> | </span>
-          <a href="https://www.chick-fil-a.pr" class="text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-300" target="_blank" rel="noopener noreferrer">Puerto Rico</a>
-          <span class="text-neutral-400 dark:text-neutral-500"> | </span>
-          <a href="https://www.chick-fil-a.com.sg" class="text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-300" target="_blank" rel="noopener noreferrer">Singapore</a>
-          <span class="text-neutral-400 dark:text-neutral-500"> | </span>
-          <a href="https://www.chick-fil-a.co.uk" class="text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-300" target="_blank" rel="noopener noreferrer">UK</a>
-          <span class="text-neutral-400 dark:text-neutral-500"> | </span>
-          <a href="https://order.chick-fil-a.com" class="text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-300" target="_blank" rel="noopener noreferrer">Web Ordering</a>
-          <span class="text-neutral-400 dark:text-neutral-500"> | </span>
-          <a href="https://www.chick-fil-a.com/delivery" class="text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-300" target="_blank" rel="noopener noreferrer">Delivery</a>
-          <span class="text-neutral-400 dark:text-neutral-500"> | One & Canada Apps</span>
-        </li>
-        <li>
+        <li class="accent-bar py-1">
           <a
             href="https://www.everybodyeverywhere.com"
-            class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+            class="text-cream-950 dark:text-ink-100 font-medium no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
             Everybody Everywhere
           </a>
-          <span class="text-neutral-400 dark:text-neutral-500"> — global movement platform</span>
+          <span class="text-cream-500 dark:text-ink-500 text-sm ml-2">&mdash; global movement platform</span>
         </li>
-        <li>
+        <li class="accent-bar py-1">
           <a
             href="http://gitty.mstrick.com"
-            class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+            class="text-cream-950 dark:text-ink-100 font-medium no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
             Gitty
           </a>
-          <span class="text-neutral-400 dark:text-neutral-500"> — GitHub client for iOS</span>
+          <span class="text-cream-500 dark:text-ink-500 text-sm ml-2">&mdash; GitHub client for iOS</span>
         </li>
-        <li>
+        <li class="accent-bar py-1">
           <a
             href="https://easydigitaldownloads.com"
-            class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+            class="text-cream-950 dark:text-ink-100 font-medium no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
             Easy Digital Downloads
           </a>
-          <span class="text-neutral-400 dark:text-neutral-500"> — WordPress e-commerce</span>
+          <span class="text-cream-500 dark:text-ink-500 text-sm ml-2">&mdash; WordPress e-commerce</span>
         </li>
-        <li>
+        <li class="accent-bar py-1">
           <a
             href="https://apps.apple.com/app/golfnow-book-tee-times-golf-gps/id359295017"
-            class="text-neutral-900 dark:text-neutral-100 no-underline hover:underline"
+            class="text-cream-950 dark:text-ink-100 font-medium no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
             GolfNow
           </a>
-          <span class="text-neutral-400 dark:text-neutral-500"> — tee time booking platform</span>
+          <span class="text-cream-500 dark:text-ink-500 text-sm ml-2">&mdash; tee time booking platform</span>
         </li>
-        <li>
-          <span class="text-neutral-900 dark:text-neutral-100">Radio Disney</span>
-          <span class="text-neutral-400 dark:text-neutral-500"> — streaming app for Disney</span>
+        <li class="accent-bar py-1">
+          <span class="text-cream-950 dark:text-ink-100 font-medium">Radio Disney</span>
+          <span class="text-cream-500 dark:text-ink-500 text-sm ml-2">&mdash; streaming app for Disney</span>
         </li>
-        <li>
-          <span class="text-neutral-900 dark:text-neutral-100">Golf Channel</span>
-          <span class="text-neutral-400 dark:text-neutral-500"> — mobile apps and instruction platform</span>
+        <li class="accent-bar py-1">
+          <span class="text-cream-950 dark:text-ink-100 font-medium">Golf Channel</span>
+          <span class="text-cream-500 dark:text-ink-500 text-sm ml-2">&mdash; mobile apps and instruction platform</span>
         </li>
       </ul>
-      <p class="mt-6">
+      <p class="mt-8">
         <a
           href="https://linkedin.com/in/mps/"
-          class="text-neutral-500 dark:text-neutral-400 text-sm"
+          class="text-sm text-cream-600 dark:text-ink-400 no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors inline-flex items-center gap-1"
           target="_blank"
           rel="noopener noreferrer"
         >
-          view full work history →
+          view full work history <span class="text-xs">&rarr;</span>
         </a>
       </p>
     </section>

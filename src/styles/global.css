@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+/* Fraunces - Display font with optical character */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&display=swap');
+
+/* Newsreader - Optimized for continuous reading */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,52 +10,203 @@
 
 @layer base {
   html {
-    @apply antialiased;
+    @apply antialiased scroll-smooth;
   }
 
   body {
-    @apply font-serif text-neutral-900 bg-white leading-relaxed;
-    @apply dark:text-neutral-100 dark:bg-neutral-950;
+    @apply font-body text-cream-950 bg-cream-100 leading-relaxed;
+    @apply dark:text-ink-100 dark:bg-ink-900;
+    @apply transition-colors duration-300;
   }
 
+  /* Subtle paper texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    z-index: 1000;
+  }
+
+  /* Links with animated underlines */
   a {
-    @apply underline decoration-neutral-400 decoration-1 underline-offset-2;
-    @apply hover:decoration-neutral-600;
-    @apply dark:decoration-neutral-500 dark:hover:decoration-neutral-300;
-    @apply transition-colors duration-150;
+    @apply text-cream-950 dark:text-ink-100;
+    @apply no-underline relative;
+    @apply transition-colors duration-200;
   }
 
+  a:not(.no-underline-effect)::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    opacity: 0.3;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  a:not(.no-underline-effect):hover::after {
+    transform: scaleX(1);
+    opacity: 0.6;
+  }
+
+  /* Headings with display font */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+    @apply font-display font-medium tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-sienna-200 dark:bg-sienna-900;
   }
 }
 
 @layer components {
+  /* Section label style */
+  .section-label {
+    @apply text-xs uppercase tracking-[0.2em] text-cream-700 dark:text-ink-400;
+    @apply font-body font-medium;
+    @apply mb-6;
+  }
+
+  /* Decorative horizontal rule */
+  .hr-decorative {
+    @apply border-none h-px my-12;
+    @apply bg-gradient-to-r from-transparent via-cream-400 to-transparent;
+    @apply dark:via-ink-700;
+  }
+
+  /* Accent bar for list items */
+  .accent-bar {
+    @apply relative pl-4;
+    @apply before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5;
+    @apply before:bg-sienna-500 before:opacity-0;
+    @apply before:transition-all before:duration-300;
+    @apply hover:before:opacity-100;
+  }
+
+  /* Card styling */
+  .card {
+    @apply p-5 rounded-lg;
+    @apply border border-cream-300 dark:border-ink-700;
+    @apply bg-cream-50/50 dark:bg-ink-800/50;
+    @apply transition-all duration-300;
+    @apply hover:border-cream-400 dark:hover:border-ink-600;
+    @apply hover:shadow-sm hover:-translate-y-0.5;
+  }
+
+  /* Prose styling for blog content */
   .prose {
-    @apply max-w-none text-neutral-800 dark:text-neutral-200;
+    @apply max-w-none;
+    @apply text-cream-900 dark:text-ink-200;
+    @apply font-body;
   }
 
   .prose a {
-    @apply text-neutral-900 dark:text-neutral-100;
+    @apply text-sienna-700 dark:text-sienna-400;
+    @apply font-medium;
+  }
+
+  .prose a:not(.no-underline-effect)::after {
+    @apply bg-sienna-500;
+  }
+
+  .prose strong {
+    @apply text-cream-950 dark:text-ink-100 font-semibold;
   }
 
   .prose hr {
-    @apply border-neutral-200 dark:border-neutral-800 my-8;
+    @apply border-cream-300 dark:border-ink-700 my-10;
   }
 
   .prose pre {
-    @apply bg-neutral-100 dark:bg-neutral-900 rounded-lg p-4 overflow-x-auto;
+    @apply bg-cream-200 dark:bg-ink-800 rounded-lg p-5 overflow-x-auto;
+    @apply border border-cream-300 dark:border-ink-700;
   }
 
   .prose code {
-    @apply bg-neutral-100 dark:bg-neutral-900 px-1.5 py-0.5 rounded text-sm;
+    @apply bg-cream-200 dark:bg-ink-800 px-1.5 py-0.5 rounded text-sm;
+    @apply text-sienna-800 dark:text-sienna-300;
+    @apply font-normal;
   }
 
   .prose pre code {
-    @apply bg-transparent p-0;
+    @apply bg-transparent p-0 text-cream-900 dark:text-ink-200;
   }
 
   .prose blockquote {
-    @apply border-l-2 border-neutral-300 dark:border-neutral-700 pl-4 italic;
+    @apply border-l-2 border-sienna-400 dark:border-sienna-600;
+    @apply pl-6 italic;
+    @apply text-cream-800 dark:text-ink-300;
+    @apply font-body;
   }
+
+  .prose ul {
+    @apply list-disc pl-6 space-y-2;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-6 space-y-2;
+  }
+
+  .prose li {
+    @apply text-cream-800 dark:text-ink-200;
+  }
+
+  /* Pull quote for featured text */
+  .pull-quote {
+    @apply font-display text-xl md:text-2xl;
+    @apply text-cream-800 dark:text-ink-200;
+    @apply border-l-4 border-sienna-500;
+    @apply pl-6 my-10;
+    @apply italic;
+  }
+
+  /* Staggered animation delays */
+  .stagger-1 { animation-delay: 0ms; }
+  .stagger-2 { animation-delay: 100ms; }
+  .stagger-3 { animation-delay: 200ms; }
+  .stagger-4 { animation-delay: 300ms; }
+  .stagger-5 { animation-delay: 400ms; }
+  .stagger-6 { animation-delay: 500ms; }
+
+  /* Initial state for animated elements */
+  .animate-on-load {
+    opacity: 0;
+  }
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  @apply w-8 h-8 rounded-full;
+  @apply flex items-center justify-center;
+  @apply text-cream-600 dark:text-ink-400;
+  @apply hover:text-cream-900 dark:hover:text-ink-100;
+  @apply hover:bg-cream-200 dark:hover:bg-ink-800;
+  @apply transition-all duration-200;
+  @apply cursor-pointer;
+}
+
+/* External link indicator */
+.external-link::after {
+  content: ' \2197';
+  @apply text-cream-500 dark:text-ink-500;
+  @apply text-sm;
 }
