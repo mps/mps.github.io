@@ -29,7 +29,7 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
       >
         <h2 class="section-label flex items-center gap-3">
           <span>{year}</span>
-          <span class="flex-1 h-px bg-gradient-to-r from-cream-300 to-transparent dark:from-ink-700"></span>
+          <span class="flex-1 h-px bg-gradient-to-r from-neutral-800 to-transparent dark:from-neutral-700"></span>
         </h2>
         <ul class="space-y-3">
           {postsByYear[Number(year)].map((post) => (
@@ -38,7 +38,7 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
                 <span class="flex items-baseline gap-2">
                   <a
                     href={post.data.link}
-                    class="text-cream-950 dark:text-ink-100 no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
+                    class="text-neutral-100 no-underline-effect hover:text-accent-400 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -46,7 +46,7 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
                   </a>
                   <a
                     href={`/${post.slug}`}
-                    class="text-cream-500 dark:text-ink-500 no-underline-effect hover:text-sienna-600 dark:hover:text-sienna-400 text-sm"
+                    class="text-neutral-600 no-underline-effect hover:text-accent-500 text-sm"
                     title="Permalink"
                   >
                     &#8599;
@@ -55,7 +55,7 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
               ) : (
                 <a
                   href={`/${post.slug}`}
-                  class="text-cream-950 dark:text-ink-100 no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
+                  class="text-neutral-100 no-underline-effect hover:text-accent-400 transition-colors"
                 >
                   {post.data.title}
                 </a>

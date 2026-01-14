@@ -24,18 +24,18 @@ const formattedDate = date.toLocaleDateString('en-US', {
         <h1 class="font-display text-2xl md:text-3xl font-medium mb-3">
           <a
             href={link}
-            class="no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors"
+            class="no-underline-effect hover:text-accent-400 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
             {title}
-            <span class="text-sienna-500 ml-2">&rarr;</span>
+            <span class="text-accent-500 ml-2">&rarr;</span>
           </a>
         </h1>
       ) : (
         <h1 class="font-display text-2xl md:text-3xl font-medium mb-3">{title}</h1>
       )}
-      <time class="text-cream-600 dark:text-ink-400 text-sm tracking-wide">
+      <time class="text-neutral-500 text-sm tracking-wide">
         {formattedDate}
       </time>
     </header>
@@ -44,10 +44,10 @@ const formattedDate = date.toLocaleDateString('en-US', {
       <slot />
     </div>
 
-    <footer class="mt-16 pt-8 border-t border-cream-300 dark:border-ink-700 animate-fade-in stagger-3" style="animation-fill-mode: both;">
+    <footer class="mt-16 pt-8 border-t border-neutral-800 dark:border-neutral-700 animate-fade-in stagger-3" style="animation-fill-mode: both;">
       <a
         href="/blog"
-        class="text-cream-600 dark:text-ink-400 text-sm no-underline-effect hover:text-sienna-700 dark:hover:text-sienna-400 transition-colors inline-flex items-center gap-1"
+        class="text-neutral-500 text-sm no-underline-effect hover:text-accent-400 transition-colors inline-flex items-center gap-1"
       >
         <span class="text-xs">&larr;</span> back to all posts
       </a>
