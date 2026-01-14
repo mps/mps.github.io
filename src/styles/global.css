@@ -14,28 +14,14 @@
   }
 
   body {
-    @apply font-body text-cream-950 bg-cream-100 leading-relaxed;
-    @apply dark:text-ink-100 dark:bg-ink-900;
+    @apply font-body text-neutral-200 leading-relaxed;
     @apply transition-colors duration-300;
-  }
-
-  /* Subtle paper texture overlay */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    z-index: 1000;
+    background-color: #0d0d0d;
   }
 
   /* Links with animated underlines */
   a {
-    @apply text-cream-950 dark:text-ink-100;
+    @apply text-neutral-100;
     @apply no-underline relative;
     @apply transition-colors duration-200;
   }
@@ -72,16 +58,16 @@
     @apply text-2xl md:text-3xl;
   }
 
-  /* Selection color */
+  /* Selection color - soft blue */
   ::selection {
-    @apply bg-sienna-200 dark:bg-sienna-900;
+    @apply bg-accent-500/30;
   }
 }
 
 @layer components {
   /* Section label style */
   .section-label {
-    @apply text-xs uppercase tracking-[0.2em] text-cream-700 dark:text-ink-400;
+    @apply text-xs uppercase tracking-[0.2em] text-neutral-500;
     @apply font-body font-medium;
     @apply mb-6;
   }
@@ -89,15 +75,14 @@
   /* Decorative horizontal rule */
   .hr-decorative {
     @apply border-none h-px my-12;
-    @apply bg-gradient-to-r from-transparent via-cream-400 to-transparent;
-    @apply dark:via-ink-700;
+    @apply bg-gradient-to-r from-transparent via-neutral-700 to-transparent;
   }
 
   /* Accent bar for list items */
   .accent-bar {
     @apply relative pl-4;
     @apply before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5;
-    @apply before:bg-sienna-500 before:opacity-0;
+    @apply before:bg-accent-500 before:opacity-0;
     @apply before:transition-all before:duration-300;
     @apply hover:before:opacity-100;
   }
@@ -105,56 +90,56 @@
   /* Card styling */
   .card {
     @apply p-5 rounded-lg;
-    @apply border border-cream-300 dark:border-ink-700;
-    @apply bg-cream-50/50 dark:bg-ink-800/50;
+    @apply border border-neutral-800;
+    @apply bg-neutral-900/50;
     @apply transition-all duration-300;
-    @apply hover:border-cream-400 dark:hover:border-ink-600;
+    @apply hover:border-neutral-700;
     @apply hover:shadow-sm hover:-translate-y-0.5;
   }
 
   /* Prose styling for blog content */
   .prose {
     @apply max-w-none;
-    @apply text-cream-900 dark:text-ink-200;
+    @apply text-neutral-300;
     @apply font-body;
   }
 
   .prose a {
-    @apply text-sienna-700 dark:text-sienna-400;
+    @apply text-accent-400;
     @apply font-medium;
   }
 
   .prose a:not(.no-underline-effect)::after {
-    @apply bg-sienna-500;
+    @apply bg-accent-500;
   }
 
   .prose strong {
-    @apply text-cream-950 dark:text-ink-100 font-semibold;
+    @apply text-neutral-100 font-semibold;
   }
 
   .prose hr {
-    @apply border-cream-300 dark:border-ink-700 my-10;
+    @apply border-neutral-700 my-10;
   }
 
   .prose pre {
-    @apply bg-cream-200 dark:bg-ink-800 rounded-lg p-5 overflow-x-auto;
-    @apply border border-cream-300 dark:border-ink-700;
+    @apply bg-neutral-900 rounded-lg p-5 overflow-x-auto;
+    @apply border border-neutral-800;
   }
 
   .prose code {
-    @apply bg-cream-200 dark:bg-ink-800 px-1.5 py-0.5 rounded text-sm;
-    @apply text-sienna-800 dark:text-sienna-300;
+    @apply bg-neutral-800 px-1.5 py-0.5 rounded text-sm;
+    @apply text-accent-300;
     @apply font-normal;
   }
 
   .prose pre code {
-    @apply bg-transparent p-0 text-cream-900 dark:text-ink-200;
+    @apply bg-transparent p-0 text-neutral-200;
   }
 
   .prose blockquote {
-    @apply border-l-2 border-sienna-400 dark:border-sienna-600;
+    @apply border-l-2 border-accent-500;
     @apply pl-6 italic;
-    @apply text-cream-800 dark:text-ink-300;
+    @apply text-neutral-400;
     @apply font-body;
   }
 
@@ -167,14 +152,14 @@
   }
 
   .prose li {
-    @apply text-cream-800 dark:text-ink-200;
+    @apply text-neutral-300;
   }
 
   /* Pull quote for featured text */
   .pull-quote {
     @apply font-display text-xl md:text-2xl;
-    @apply text-cream-800 dark:text-ink-200;
-    @apply border-l-4 border-sienna-500;
+    @apply text-neutral-300;
+    @apply border-l-4 border-accent-500;
     @apply pl-6 my-10;
     @apply italic;
   }
@@ -193,13 +178,13 @@
   }
 }
 
-/* Dark mode toggle button */
+/* Theme toggle button */
 .theme-toggle {
   @apply w-8 h-8 rounded-full;
   @apply flex items-center justify-center;
-  @apply text-cream-600 dark:text-ink-400;
-  @apply hover:text-cream-900 dark:hover:text-ink-100;
-  @apply hover:bg-cream-200 dark:hover:bg-ink-800;
+  @apply text-neutral-500;
+  @apply hover:text-neutral-100;
+  @apply hover:bg-neutral-800;
   @apply transition-all duration-200;
   @apply cursor-pointer;
 }
@@ -207,6 +192,6 @@
 /* External link indicator */
 .external-link::after {
   content: ' \2197';
-  @apply text-cream-500 dark:text-ink-500;
+  @apply text-neutral-600;
   @apply text-sm;
 }

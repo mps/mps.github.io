@@ -9,18 +9,18 @@ const currentYear = new Date().getFullYear();
   <div class="max-w-2xl mx-auto px-6">
     <!-- Decorative divider -->
     <div class="flex items-center gap-4 mb-10">
-      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-cream-300 to-transparent dark:via-ink-700"></div>
-      <span class="text-cream-400 dark:text-ink-600 text-lg">&sect;</span>
-      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-cream-300 to-transparent dark:via-ink-700"></div>
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
+      <span class="text-neutral-700 text-lg">&sect;</span>
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
     </div>
 
     <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
       <!-- Social links -->
-      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-cream-600 dark:text-ink-400">
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-500">
         {author.twitter && (
           <a
             href={`https://x.com/${author.twitter}`}
-            class="no-underline-effect hover:text-cream-950 dark:hover:text-ink-100 transition-colors"
+            class="no-underline-effect hover:text-neutral-100 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -30,7 +30,7 @@ const currentYear = new Date().getFullYear();
         {author.github && (
           <a
             href={`https://github.com/${author.github}`}
-            class="no-underline-effect hover:text-cream-950 dark:hover:text-ink-100 transition-colors"
+            class="no-underline-effect hover:text-neutral-100 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -40,7 +40,7 @@ const currentYear = new Date().getFullYear();
         {author.instagram && (
           <a
             href={`https://instagram.com/${author.instagram}`}
-            class="no-underline-effect hover:text-cream-950 dark:hover:text-ink-100 transition-colors"
+            class="no-underline-effect hover:text-neutral-100 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -49,20 +49,20 @@ const currentYear = new Date().getFullYear();
         )}
         <a
           href={`mailto:${author.email}`}
-          class="no-underline-effect hover:text-cream-950 dark:hover:text-ink-100 transition-colors"
+          class="no-underline-effect hover:text-neutral-100 transition-colors"
         >
           email
         </a>
         <a
           href="/rss.xml"
-          class="no-underline-effect hover:text-cream-950 dark:hover:text-ink-100 transition-colors"
+          class="no-underline-effect hover:text-neutral-100 transition-colors"
         >
           rss
         </a>
       </div>
 
       <!-- Copyright -->
-      <p class="text-xs text-cream-500 dark:text-ink-500">
+      <p class="text-xs text-neutral-600">
         &copy; {currentYear}
       </p>
     </div>
