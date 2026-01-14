@@ -13,17 +13,45 @@
     @apply antialiased scroll-smooth;
   }
 
+  /* Light mode (default) */
   body {
-    @apply font-body text-neutral-200 leading-relaxed;
+    @apply font-body text-neutral-800 bg-neutral-50 leading-relaxed;
     @apply transition-colors duration-300;
+  }
+
+  /* Dark mode */
+  .dark body {
+    @apply text-neutral-200;
     background-color: #0d0d0d;
+  }
+
+  /* Subtle paper texture overlay - light mode only */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    z-index: 1000;
+  }
+
+  .dark body::before {
+    opacity: 0;
   }
 
   /* Links with animated underlines */
   a {
-    @apply text-neutral-100;
+    @apply text-neutral-800;
     @apply no-underline relative;
     @apply transition-colors duration-200;
+  }
+
+  .dark a {
+    @apply text-neutral-100;
   }
 
   a:not(.no-underline-effect)::after {
@@ -58,7 +86,7 @@
     @apply text-2xl md:text-3xl;
   }
 
-  /* Selection color - soft blue */
+  /* Selection color - Telegram blue */
   ::selection {
     @apply bg-accent-500/30;
   }
@@ -75,7 +103,11 @@
   /* Decorative horizontal rule */
   .hr-decorative {
     @apply border-none h-px my-12;
-    @apply bg-gradient-to-r from-transparent via-neutral-700 to-transparent;
+    @apply bg-gradient-to-r from-transparent via-neutral-300 to-transparent;
+  }
+
+  .dark .hr-decorative {
+    @apply via-neutral-700;
   }
 
   /* Accent bar for list items */
@@ -90,23 +122,34 @@
   /* Card styling */
   .card {
     @apply p-5 rounded-lg;
-    @apply border border-neutral-800;
-    @apply bg-neutral-900/50;
+    @apply border border-neutral-200 bg-white;
     @apply transition-all duration-300;
-    @apply hover:border-neutral-700;
+    @apply hover:border-neutral-300;
     @apply hover:shadow-sm hover:-translate-y-0.5;
+  }
+
+  .dark .card {
+    @apply border-neutral-800 bg-neutral-900/50;
+    @apply hover:border-neutral-700;
   }
 
   /* Prose styling for blog content */
   .prose {
     @apply max-w-none;
-    @apply text-neutral-300;
+    @apply text-neutral-700;
     @apply font-body;
   }
 
+  .dark .prose {
+    @apply text-neutral-300;
+  }
+
   .prose a {
+    @apply text-accent-600 font-medium;
+  }
+
+  .dark .prose a {
     @apply text-accent-400;
-    @apply font-medium;
   }
 
   .prose a:not(.no-underline-effect)::after {
@@ -114,33 +157,57 @@
   }
 
   .prose strong {
-    @apply text-neutral-100 font-semibold;
+    @apply text-neutral-900 font-semibold;
+  }
+
+  .dark .prose strong {
+    @apply text-neutral-100;
   }
 
   .prose hr {
-    @apply border-neutral-700 my-10;
+    @apply border-neutral-200 my-10;
+  }
+
+  .dark .prose hr {
+    @apply border-neutral-700;
   }
 
   .prose pre {
-    @apply bg-neutral-900 rounded-lg p-5 overflow-x-auto;
-    @apply border border-neutral-800;
+    @apply bg-neutral-100 rounded-lg p-5 overflow-x-auto;
+    @apply border border-neutral-200;
+  }
+
+  .dark .prose pre {
+    @apply bg-neutral-900 border-neutral-800;
   }
 
   .prose code {
-    @apply bg-neutral-800 px-1.5 py-0.5 rounded text-sm;
-    @apply text-accent-300;
+    @apply bg-neutral-100 px-1.5 py-0.5 rounded text-sm;
+    @apply text-accent-600;
     @apply font-normal;
   }
 
+  .dark .prose code {
+    @apply bg-neutral-800 text-accent-300;
+  }
+
   .prose pre code {
-    @apply bg-transparent p-0 text-neutral-200;
+    @apply bg-transparent p-0 text-neutral-800;
+  }
+
+  .dark .prose pre code {
+    @apply text-neutral-200;
   }
 
   .prose blockquote {
     @apply border-l-2 border-accent-500;
     @apply pl-6 italic;
-    @apply text-neutral-400;
+    @apply text-neutral-600;
     @apply font-body;
+  }
+
+  .dark .prose blockquote {
+    @apply text-neutral-400;
   }
 
   .prose ul {
@@ -152,16 +219,24 @@
   }
 
   .prose li {
+    @apply text-neutral-700;
+  }
+
+  .dark .prose li {
     @apply text-neutral-300;
   }
 
   /* Pull quote for featured text */
   .pull-quote {
     @apply font-display text-xl md:text-2xl;
-    @apply text-neutral-300;
+    @apply text-neutral-700;
     @apply border-l-4 border-accent-500;
     @apply pl-6 my-10;
     @apply italic;
+  }
+
+  .dark .pull-quote {
+    @apply text-neutral-300;
   }
 
   /* Staggered animation delays */
@@ -183,15 +258,24 @@
   @apply w-8 h-8 rounded-full;
   @apply flex items-center justify-center;
   @apply text-neutral-500;
-  @apply hover:text-neutral-100;
-  @apply hover:bg-neutral-800;
+  @apply hover:text-neutral-900;
+  @apply hover:bg-neutral-100;
   @apply transition-all duration-200;
   @apply cursor-pointer;
+}
+
+.dark .theme-toggle {
+  @apply hover:text-neutral-100;
+  @apply hover:bg-neutral-800;
 }
 
 /* External link indicator */
 .external-link::after {
   content: ' \2197';
-  @apply text-neutral-600;
+  @apply text-neutral-400;
   @apply text-sm;
+}
+
+.dark .external-link::after {
+  @apply text-neutral-600;
 }
