@@ -1,0 +1,1068 @@
+---
+// Dad Tribute Page - Standalone memorial page
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philip Strickland | 1950–2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           Philip Strickland Memorial
+           A warm editorial aesthetic
+           ============================================ */
+
+        :root {
+            /* Warm, dignified palette */
+            --color-cream: #FAF8F5;
+            --color-cream-dark: #F5F2ED;
+            --color-text: #2C2C2C;
+            --color-text-light: #5A5A5A;
+            --color-text-muted: #8A8A8A;
+            --color-sage: #7A8B76;
+            --color-sage-light: #E8EBE7;
+            --color-gold: #B8A88A;
+            --color-border: #E5E2DE;
+            --color-white: #FFFFFF;
+
+            /* Typography */
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Serif 4', Georgia, serif;
+
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.4s ease;
+            --transition-slow: 0.6s ease;
+        }
+
+        /* Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--color-text);
+            background-color: var(--color-cream);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* ============================================
+           Hero Section
+           ============================================ */
+        .hero {
+            background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream) 100%);
+            padding: var(--space-xl) var(--space-md);
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s var(--transition-medium);
+        }
+
+        .hero-photo-frame {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto var(--space-lg);
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--color-white);
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.08),
+                0 0 0 1px var(--color-border);
+            animation: fadeIn 1.2s ease;
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        .hero-dates {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-xs);
+        }
+
+        .hero-name {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: var(--color-text);
+            margin-bottom: var(--space-sm);
+        }
+
+        .hero-line {
+            width: 60px;
+            height: 1px;
+            background: var(--color-sage);
+            margin: var(--space-md) auto;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-style: italic;
+            font-weight: 300;
+            color: var(--color-text-light);
+        }
+
+        /* ============================================
+           Section Headers
+           ============================================ */
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .section-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-sage);
+            margin-bottom: var(--space-xs);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 400;
+            color: var(--color-text);
+        }
+
+        /* ============================================
+           Photo Gallery
+           ============================================ */
+        .gallery-section {
+            padding: var(--space-xl) 0;
+            background-color: var(--color-cream);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-sm);
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            cursor: pointer;
+            background-color: var(--color-cream-dark);
+            border-radius: 2px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 70%, rgba(0,0,0,0.08) 100%);
+            opacity: 0;
+            transition: opacity var(--transition-fast);
+            pointer-events: none;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform var(--transition-medium), opacity var(--transition-fast);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img.lazy {
+            opacity: 0;
+        }
+
+        .gallery-item img.loaded {
+            opacity: 1;
+        }
+
+        /* ============================================
+           Lightbox
+           ============================================ */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(20, 20, 20, 0.97);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            padding: var(--space-sm);
+            transition: color var(--transition-fast);
+            z-index: 10;
+        }
+
+        .lightbox-close:hover {
+            color: white;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            padding: var(--space-sm);
+            border-radius: 50%;
+            transition: all var(--transition-fast);
+            z-index: 10;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .lightbox-prev {
+            left: var(--space-md);
+        }
+
+        .lightbox-next {
+            right: var(--space-md);
+        }
+
+        .lightbox-content {
+            text-align: center;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: 2px;
+        }
+
+        .lightbox-footer {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+            padding-top: var(--space-sm);
+        }
+
+        .lightbox-counter {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .lightbox-download {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            padding: var(--space-xs) var(--space-sm);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            transition: all var(--transition-fast);
+        }
+
+        .lightbox-download:hover {
+            color: white;
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* ============================================
+           Memory Section (Eulogy & Obituary)
+           ============================================ */
+        .memory-section {
+            padding: var(--space-xl) 0;
+            background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);
+        }
+
+        .memory-cards {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .memory-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .memory-header {
+            width: 100%;
+            padding: var(--space-md) var(--space-md);
+            background: var(--color-white);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            transition: background var(--transition-fast);
+        }
+
+        .memory-header:hover {
+            background: var(--color-cream);
+        }
+
+        .memory-header-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .memory-label {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-sage);
+        }
+
+        .memory-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-text);
+        }
+
+        .memory-toggle {
+            color: var(--color-text-muted);
+            transition: transform var(--transition-medium);
+        }
+
+        .memory-card.open .memory-toggle {
+            transform: rotate(45deg);
+        }
+
+        .memory-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-slow);
+        }
+
+        .memory-card.open .memory-content {
+            max-height: 10000px;
+        }
+
+        .memory-text {
+            padding: 0 var(--space-md) var(--space-lg);
+            font-family: var(--font-body);
+            font-size: 1.0625rem;
+            line-height: 1.9;
+            color: var(--color-text);
+            border-top: 1px solid var(--color-border);
+            padding-top: var(--space-md);
+            margin-top: var(--space-sm);
+        }
+
+        .memory-text p {
+            margin-bottom: 1.5em;
+        }
+
+        .memory-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .memory-text strong {
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .memory-text em {
+            font-style: italic;
+        }
+
+        .memory-text a {
+            color: var(--color-sage);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .memory-text a:hover {
+            color: var(--color-text);
+        }
+
+        /* ============================================
+           Footer
+           ============================================ */
+        .site-footer {
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+            background-color: var(--color-cream-dark);
+        }
+
+        .footer-line {
+            width: 40px;
+            height: 1px;
+            background: var(--color-border);
+            margin: 0 auto var(--space-md);
+        }
+
+        .footer-text {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-style: italic;
+            color: var(--color-text-light);
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer-dates {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+        }
+
+        /* ============================================
+           Animations
+           ============================================ */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================
+           Responsive
+           ============================================ */
+        @media (max-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --space-lg: 3rem;
+                --space-xl: 4rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-xs);
+            }
+
+            .hero-photo-frame {
+                width: 220px;
+                height: 220px;
+            }
+
+            .lightbox-nav {
+                padding: var(--space-xs);
+            }
+
+            .lightbox-prev {
+                left: var(--space-sm);
+            }
+
+            .lightbox-next {
+                right: var(--space-sm);
+            }
+
+            .memory-header {
+                padding: var(--space-sm) var(--space-sm);
+            }
+
+            .memory-text {
+                padding: 0 var(--space-sm) var(--space-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                padding: var(--space-lg) var(--space-sm);
+            }
+
+            .hero-photo-frame {
+                width: 180px;
+                height: 180px;
+                margin-bottom: var(--space-md);
+            }
+
+            .lightbox-footer {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+        }
+
+        /* ============================================
+           Print Styles
+           ============================================ */
+        @media print {
+            .gallery-section,
+            .lightbox {
+                display: none;
+            }
+
+            .memory-content {
+                max-height: none;
+            }
+
+            .memory-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-photo-frame">
+                <img src="/dad-tribute/featured.jpg" alt="Philip Strickland" class="hero-photo">
+            </div>
+            <div class="hero-text">
+                <p class="hero-dates">June 7, 1950 — January 16, 2025</p>
+                <h1 class="hero-name">Philip Strickland</h1>
+                <div class="hero-line"></div>
+                <p class="hero-subtitle">Beloved husband, father, and friend</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Photo Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Memories</span>
+                <h2 class="section-title">A life well lived is worth a million smiles</h2>
+            </div>
+            <div class="gallery" id="gallery">
+                <!-- Photos inserted via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-footer">
+                <span class="lightbox-counter" id="lightbox-counter">1 of 12</span>
+                <a href="" download class="lightbox-download" id="lightbox-download">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                    </svg>
+                    Download
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- In Memory Sections -->
+    <section class="memory-section">
+        <div class="container">
+            <div class="memory-cards">
+                <article class="memory-card" id="eulogy-jennifer-section">
+                    <button class="memory-header" aria-expanded="false">
+                        <div class="memory-header-text">
+                            <span class="memory-label">Words of Remembrance</span>
+                            <h3 class="memory-title">Eulogy — Jennifer Kogod</h3>
+                        </div>
+                        <span class="memory-toggle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="memory-content">
+                        <div class="memory-text" id="eulogy-jennifer-text">
+                            <p><em>Coming Soon</em></p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="memory-card" id="eulogy-dana-section">
+                    <button class="memory-header" aria-expanded="false">
+                        <div class="memory-header-text">
+                            <span class="memory-label">Words of Remembrance</span>
+                            <h3 class="memory-title">Eulogy — Dana Walker</h3>
+                        </div>
+                        <span class="memory-toggle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="memory-content">
+                        <div class="memory-text" id="eulogy-dana-text">
+                            <p>I stand before you today as the proud daughter of Philip and Teresa Strickland. I'd like to take a moment to share with you about life as their daughter and tell you how my daddy prioritized friends, family, and faith during his lifetime.</p>
+
+                            <p><strong>A Devoted Friend</strong></p>
+
+                            <p>My dad was a devoted friend. From annual trips to Vegas with cousins and friends to monthly poker nights, daddy was diligent about making time for his friends. He always called to check on them. He made time for his friends when they needed him and was quick to check on those he had not heard from in a while. He was committed to praying for them. It is shown today by the support and love he received during his last days on this earth.</p>
+
+                            <p><strong>Committed to Family</strong></p>
+
+                            <p>Secondly, my dad was committed to his family. He always made a point to ask how everyone else was doing. He loved his siblings so well and they knew they could always count on him to be there for them. When he would talk to his grandkids, he'd ask about how they were doing in school. He was quick to mention their grades and he made sure to reward them with money if their report cards were good. They loved it when their papa did that. He made a point to attend all of their events and watching them perform brought such joy to his face. When he and I would talk, he'd ask about Joey and was sure to tell me that he worked all the time. He'd ask how my day was and then tell me about his.</p>
+
+                            <p>I always knew that I could pick up the phone and he'd help me with whatever I needed. He was the best at doing "chores" as he would call them. He was there for me every year during tax season. He'd call to tell me he'd purchased turbo tax and ask when I'd be in Jefferson to do my taxes. He'd make sure his printer had ink, and he'd sit there with me to see how much I was getting back. He was so willing to help me with random projects. He was so proud of the signs we hung in my laundry room and kept telling me how nice it looked. This past summer he and his best friend David hung all the pictures in my new office. I'm so thankful for that memory. It may have taken them 3 times longer because neither of them was in great health, but I wouldn't trade that special memory for anything. My hope is to feel his presence each day while I'm at work to get me through the hard days.</p>
+
+                            <p><strong>A Man of Faith</strong></p>
+
+                            <p>Finally, my dad was a man of faith. He loved Jesus and wasn't afraid to tell others. He enjoyed going to church and fellowshipping with other believers. He was so faithful to bring my mom to church each week even when she was sick. I know it was hard for him to do that but he knew how much she loved church and being there with us so he kept it up as long as he could. Sitting beside him each week was so special and something I'm going to miss so much.</p>
+
+                            <p><strong>His Legacy</strong></p>
+
+                            <p>In closing, my dad has truly left a legacy and lasting impression on our family and so many others. He loved his shug, babydoll, and best buddy so much and never forgot to tell us just that. He spoke about how proud he was of all of us and that's something I'll never forget. I never questioned his heart or intentions because I know how pure they both were.</p>
+
+                            <p>Daddy, I want you to know that I love you so much and I'm so grateful God chose you to be my daddy. You have taught me how to work hard, be generous, selfless and most importantly how to put Jesus first. I promise to always make you proud and to serve others like you did. I know today you are rejoicing in Heaven. Always know as time passes, I will continue to thank God for you every time I think of you. I'll always be your babydoll. Love you forever.</p>
+
+                            <p><em>— Dana Walker</em></p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="memory-card" id="eulogy-matthew-section">
+                    <button class="memory-header" aria-expanded="false">
+                        <div class="memory-header-text">
+                            <span class="memory-label">Words of Remembrance</span>
+                            <h3 class="memory-title">Eulogy — Matthew Strickland</h3>
+                        </div>
+                        <span class="memory-toggle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="memory-content">
+                        <div class="memory-text" id="eulogy-matthew-text">
+                            <p><strong>Uncommon Greatness</strong></p>
+
+                            <p>It's always tough following those two, I've tried to do it my entire life as their baby brother. They are pretty special aren't they? Jennifer, Dana - you were Dad's pride and joy. You honored him so well just now.</p>
+
+                            <p>So much Dad wanted me to say, I'll save that for in just a minute. I'm so grateful my uncle Tim gave me 2 whole hours to speak today, it's going to be great. Just kidding.</p>
+
+                            <p>On behalf of my mom Teresa, my sisters Jennifer and Dana and our entire family, I would like to thank everyone for being here today to celebrate a son, a brother, a husband, a father, a grandfather and a friend, my dad, Philip Eugene Strickland.</p>
+
+                            <p>Whether you called him Philip, Phil, Husband, Daddy, Dad, Papa, Bones or Strick, you knew he was someone you could always count on.</p>
+
+                            <p>Before I share a few thoughts, Dad wanted me to keep it light so I'll try to do that. It's okay to laugh at a funeral, we all need it. And if you do it will at least make me feel better.</p>
+
+                            <p><strong>Jokes</strong></p>
+
+                            <p>My Dad had some funny quirks that endeared him to so many.</p>
+
+                            <p>From refilling the ketchup bottle with water and shaking it when we ran out. Somehow he thought that was a good idea. I tried to tell him that was the worst part of ketchup when the water came out and not the sauce.</p>
+
+                            <p>He loved his wish sandwiches. If you are not familiar, a wish sandwich is two pieces of bread with ketchup and mustard and you wished something was in the middle. I know I may have ruined your dinner or unlocked a world of potential, let me know where you land.</p>
+
+                            <p>My dad was the fastest reader known to mankind. I would find him on the weekends starting a new book and then a few hours later he was done, 600+ pages. I could not believe it, who was this person? This even went so far as to think he really could not read and was just pretending. Anytime we were together I would force him to read things just to verify he wasn't pulling my leg. "Hey Dad, can you read this for me? What do these instructions say? What's that sign say"</p>
+
+                            <p>From convincing his grandchildren that "Papa can do anything" "If he can't fix it no one can"</p>
+
+                            <p>To standing on his tippy toes anytime we took a picture together just to be a little taller or as tall as me.</p>
+
+                            <p>To any time you would call him and he was around someone, you were going to talk to them too. "Here talk to Matthew, he wants to tell you something". Even though I may not know the person or have anything to say.</p>
+
+                            <p>My dad always wanted to bring people together. And look Dad, you did that even today.</p>
+
+                            <p><strong>Stories</strong></p>
+
+                            <p>One story my dad promised me to share on this day was from our time on the baseball fields.</p>
+
+                            <p>I have a memory of my dad seared in my brain from those days. You see my dad would often arrive to practice or our games coming from work, dressed in his slacks and dress shirt. He would roll up those sleeves and get to work.</p>
+
+                            <p>My dad would often say your greatest ability is your availability. And he was available to me and so many.</p>
+
+                            <p>One season we were in the championship game. It was the bottom of the final inning, we were up 2 runs and it was my turn to pitch and close out the game as I had done all season.</p>
+
+                            <p>Unfortunately for me and the team, I hit the first batter and walked the next two. A passed ball to the 4th hitter and all of the sudden we were only up 1 run and in danger of losing the game.</p>
+
+                            <p>I was visibly shaken, my dad called time out and walked out to the mound. He encouraged our team that we were okay and to stay confident. He asked my teammates to go back to there position so he could talk to me one on one.</p>
+
+                            <p>There on the mound my dad said the craziest thing: <em>"Son, isn't this the greatest thing ever?"</em></p>
+
+                            <p>I thought he was out of his mind. Greatest thing ever? Are you kidding me?</p>
+
+                            <p>He continued... <em>"Isn't it great that we get a chance to do this together? To be here in this moment...To have a chance to win or lose? Wow what a moment!"</em></p>
+
+                            <p>I just looked at him confused but smiled and nodded my head, wiping tears from eyes.</p>
+
+                            <p><em>"Alright son, you know I love you and no matter what happens I'm so proud of you. I believe in you, go get this win."</em></p>
+
+                            <p>After he left the mound, I closed my eyes and took a deep breath. Composed, knowing I was loved and my dad believed in me I struck out the next 3 batters and we won the championship.</p>
+
+                            <p>The next thing I remember was my dad running out of the dugout, hoisting me up in his arms. Looking me in the eye and telling me he loved me and how proud he was of me.</p>
+
+                            <p>You see, that was my dad. Always letting people know that he believed in them. Many of you are shaking your head, because he believed in you as well.</p>
+
+                            <p>I took that lesson with me into my life and career. I've learned that sometimes the greatest gift you can give others is letting them know you believe in them. If you've ever heard me say that to you, now you know where I learned it from, my hero, my dad.</p>
+
+                            <p><strong>Shoutouts</strong></p>
+
+                            <p>I could share stories and lessons from my Dad for days. But I promised Tim I would only go 2 hours. My dad did want me to share a few direct words with some people here today, so hold on because this is going to be tough but I promise it will be good.</p>
+
+                            <p><strong>Judy</strong> — You were my dad's first love, his oldest sister, his ride or die. Judy Judy Judy. You and Joe, April and Andy brought so much joy to my dad. You all loved him and mom so well.</p>
+
+                            <p><strong>Lisa</strong> — You were his first babydoll, Dolla. You are an overcomer. You made my dad so proud how you raised Aaron, were successful in your career and a rock for our family.</p>
+
+                            <p><strong>Tim</strong> — You were my dad's favorite baseball player. The greatest baseball player he had ever seen in person. He never let you win, you had to earn it. If it wasn't for God's plan and that injury in football, there's no doubt in his mind you would have played in the big leagues. Dad was so proud of you, how God saved you and turned your life around. You were his favorite preacher, he could listen to you talk about God and his Word anytime anywhere.</p>
+
+                            <p><strong>David</strong> — You were his other best friend besides me. As he would often say, you and him just like each other. It wasn't about being related, we just want to be together. You were his rock, in those final years you and him were inseparable. It gave me great confidence knowing that he always had you by his side. Dad loved you, never forget that.</p>
+
+                            <p><strong>Sam and Debbie</strong> — You did him the greatest favor ever, you took a chance on me. Gave me a start in my career and allowed me to marry Katie. Sam, you were a hero of my dad's. He looked up to you.</p>
+
+                            <p><strong>Grandchildren</strong> — My dad always said being a grandpa is like falling in love all over again. Boo Bear, Brantley Jay (Papa's little man), Ray Ray, Ella the Beautiful, RossMan, Jad the Jedi, Evan the Warrior, Ruby the Gem — Always know that your Papa loved you. Your charge from this day forward is to live up to those high expectations he had for you. He had high expectations because he believed you could get there.</p>
+
+                            <p><strong>Murray and Joey</strong> — You are the brothers I never had. My dad treated you both like his sons, and I know that meant so much to you. His favorite thing about each of you was the love you had for Jennifer and Dana. Take care of them, I will always here for you.</p>
+
+                            <p><strong>Katie</strong> — He always told me to not mess this up and to hold onto you. He knew, what I did, that you were special. You made him a grandfather of 4 amazing grandchildren. He loved your singing, your heart and your family. What a gift you were to him and you are to me.</p>
+
+                            <p><strong>Jennifer and Dana</strong> — As I said earlier you were his pride and joy. His Sug. His Babydoll. He cherished your calls, your visits, just to be in the room together was more than enough. He wanted you both to know how proud you made him as you took care of Mom and him in these last days. Your speeches today would have brought the biggest smile to his face. He wanted you to never walk a day on this earth not knowing that he loved you.</p>
+
+                            <p><strong>And finally, Mom</strong> — I know you could not be here today but you would be so proud. Dementia did not steal your memories, just your ability to access them. Dad wanted everyone to know how much he loved you. He did his best to serve you so well and I can say he certainly did. You unlocked every good thing in his life, giving him two beautiful daughters and a son. Your decision to follow Jesus and help us get rooted in this very church, reignited his faith and changed the destiny of our family forever. Mom, you were his hero.</p>
+
+                            <p><strong>Closing</strong></p>
+
+                            <p>In closing... Jesus says in John 14:6: <em>"I am the way, the truth, and the life. No one comes to the Father except through me."</em></p>
+
+                            <p>And that is exactly how my dad, Philip Eugene Strickland went to Heaven. Through his Savior Jesus Christ.</p>
+
+                            <p>With one final tear from his left eye and a slight smile from his right cheek, my dad's faith was made sight at 7:07pm on Thursday.</p>
+
+                            <p>I always wanted to make my dad proud and I know I did. In the past few days, many of you have shared that with me. Even better, my dad told me all the time how proud I made him.</p>
+
+                            <p>Thank you God for giving me a great dad and a best friend.</p>
+
+                            <p>I always knew my dad was SPECIAL, I just did not know you all knew that as well.</p>
+
+                            <p>Thank you for being an uncommonly great father, you have set the bar high.</p>
+
+                            <p>Love you forever Dad.</p>
+
+                            <p><em>— Matthew Strickland</em></p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="memory-card" id="obituary-section">
+                    <button class="memory-header" aria-expanded="false">
+                        <div class="memory-header-text">
+                            <span class="memory-label">In Memoriam</span>
+                            <h3 class="memory-title">Obituary</h3>
+                        </div>
+                        <span class="memory-toggle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="memory-content">
+                        <div class="memory-text" id="obituary-text">
+                            <p>It is with both sorrow and hope in the promises of Jesus Christ that we announce the passing of Philip Eugene Strickland, who went to heaven on January 16, 2025, at 7:07 PM surrounded by his loved ones.</p>
+
+                            <p>Philip was the son of Jimmie Lou Strickland and Harry Eugene Strickland. He was born June 7, 1950 in Gainesville, GA.</p>
+
+                            <p>Philip was a devoted husband, father, brother, grandfather, and friend. His life was marked by unwavering faith, a generous spirit, and an enduring love for his family. Philip was a follower of Jesus Christ and a member of Chestnut Mountain Church in Flowery Branch, Georgia.</p>
+
+                            <p>Philip served his country with honor as a member of the United States Navy and then obtained his degree from the University of Georgia in Geology. After graduation, Philip worked in the oil fields before transitioning to a thirty year career in insurance at Georgia Farm Bureau serving Jackson and Barrow County.</p>
+
+                            <p>Philip is survived by his beloved wife of 53 years, Teresa Strickland; his children: Jennifer Kogod and her husband Murray Kogod, Dana Walker and her husband Joey Walker, and Matthew Strickland and his wife Katie Strickland; and his eight cherished grandchildren, Brooklyn, Brantley, Reagan, Ella, Ross, Jad, Evan and Ruby.</p>
+
+                            <p>He is also survived by his sister Judy Barfield and her husband Joe Barfield, his sister Lisa Slaten, and his brother Tim Strickland and his wife Renee Strickland. Philip's siblings were a source of great joy and companionship throughout his life.</p>
+
+                            <p>Additionally, Philip is survived by his first cousin David Emmett and his wife Marilyn Emmett. David was his life long best friend and caregiver in his final years. Philip's family is forever indebted to David for his love and devotion.</p>
+
+                            <p>Philip's life was a testament to his faith, and his memory will be treasured by all who knew him.</p>
+
+                            <p>The family kindly requests prayers and support during this time as they celebrate Philip's life. They rejoice in the knowledge that his faith is now made sight as he is in the presence of his Savior, Jesus Christ.</p>
+
+                            <p>In lieu of flowers, please consider making a donation in honor of Philip to <a href="https://illuminations.bible/" target="_blank" rel="noopener">Illuminations</a>, an organization dedicated to helping provide God's Word in every language for every people group in our lifetime.</p>
+
+                            <p>Philip's legacy of faith, love, and service will continue to echo in this life and into the next by all who knew and loved him.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-line"></div>
+            <p class="footer-text">In loving memory</p>
+            <p class="footer-dates">1950 — 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Photos array - 20 selected photos
+        const photos = [
+            { thumb: '/dad-tribute/photos-thumb/0001.jpg', full: '/dad-tribute/photos-full/0001.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0030.jpg', full: '/dad-tribute/photos-full/0030.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0060.jpg', full: '/dad-tribute/photos-full/0060.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0090.jpg', full: '/dad-tribute/photos-full/0090.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0094.jpg', full: '/dad-tribute/photos-full/0094.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0105.jpg', full: '/dad-tribute/photos-full/0105.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0120.jpg', full: '/dad-tribute/photos-full/0120.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0150.jpg', full: '/dad-tribute/photos-full/0150.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0166.jpg', full: '/dad-tribute/photos-full/0166.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0180.jpg', full: '/dad-tribute/photos-full/0180.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0203.jpg', full: '/dad-tribute/photos-full/0203.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0210.jpg', full: '/dad-tribute/photos-full/0210.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0221.jpg', full: '/dad-tribute/photos-full/0221.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0240.jpg', full: '/dad-tribute/photos-full/0240.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0244.jpg', full: '/dad-tribute/photos-full/0244.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0254.jpg', full: '/dad-tribute/photos-full/0254.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0256.jpg', full: '/dad-tribute/photos-full/0256.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0270.jpg', full: '/dad-tribute/photos-full/0270.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0300.jpg', full: '/dad-tribute/photos-full/0300.jpg' },
+            { thumb: '/dad-tribute/photos-thumb/0325.jpg', full: '/dad-tribute/photos-full/0325.jpg' }
+        ];
+
+        // DOM Elements
+        const gallery = document.getElementById('gallery');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxDownload = document.getElementById('lightbox-download');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+
+        let currentPhotoIndex = 0;
+
+        // Initialize gallery
+        function initGallery() {
+            if (!photos || photos.length === 0) return;
+
+            photos.forEach((photo, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+
+                const img = document.createElement('img');
+                img.className = 'lazy';
+                img.dataset.src = photo.thumb;
+                img.alt = `Memory ${index + 1}`;
+                img.dataset.index = index;
+
+                item.appendChild(img);
+                gallery.appendChild(item);
+
+                // Click to open lightbox
+                item.addEventListener('click', () => openLightbox(index));
+            });
+
+            // Initialize lazy loading
+            lazyLoadImages();
+        }
+
+        // Lazy loading for gallery images
+        function lazyLoadImages() {
+            const lazyImages = document.querySelectorAll('img.lazy');
+
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.onload = () => img.classList.add('loaded');
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '200px'
+            });
+
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
+
+        // Lightbox functions
+        function openLightbox(index) {
+            currentPhotoIndex = index;
+            updateLightboxImage();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const photo = photos[currentPhotoIndex];
+            lightboxImg.src = photo.full;
+            lightboxImg.alt = `Memory ${currentPhotoIndex + 1}`;
+            lightboxDownload.href = photo.full;
+            lightboxCounter.textContent = `${currentPhotoIndex + 1} of ${photos.length}`;
+        }
+
+        function prevPhoto() {
+            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+            updateLightboxImage();
+        }
+
+        function nextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            updateLightboxImage();
+        }
+
+        // Lightbox event listeners
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', prevPhoto);
+        lightboxNext.addEventListener('click', nextPhoto);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') prevPhoto();
+            if (e.key === 'ArrowRight') nextPhoto();
+        });
+
+        // Expandable memory sections
+        document.querySelectorAll('.memory-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.closest('.memory-card');
+                const isOpen = card.classList.contains('open');
+
+                card.classList.toggle('open');
+                header.setAttribute('aria-expanded', !isOpen);
+            });
+        });
+
+        // Touch swipe support for lightbox
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextPhoto();
+                } else {
+                    prevPhoto();
+                }
+            }
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initGallery);
+    </script>
+</body>
+</html>
