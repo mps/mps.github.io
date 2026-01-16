@@ -226,6 +226,16 @@
     @apply text-neutral-300;
   }
 
+  /* Circular image for memorial posts */
+  .circular-img {
+    @apply w-48 h-48 rounded-full object-cover mx-auto mb-8;
+    @apply shadow-lg;
+  }
+
+  .dark .circular-img {
+    @apply shadow-neutral-900;
+  }
+
   /* Pull quote for featured text */
   .pull-quote {
     @apply font-display text-xl md:text-2xl;
