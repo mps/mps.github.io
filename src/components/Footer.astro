@@ -20,44 +20,49 @@ const currentYear = new Date().getFullYear();
         {author.twitter && (
           <a
             href={`https://x.com/${author.twitter}`}
-            class="no-underline-effect hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+            class="group no-underline-effect hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
-            x
+            <span>x</span>
+            <span class="block h-0.5 w-0 group-hover:w-full bg-accent-500 transition-all duration-300 mt-0.5"></span>
           </a>
         )}
         {author.github && (
           <a
             href={`https://github.com/${author.github}`}
-            class="no-underline-effect hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+            class="group no-underline-effect hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
-            github
+            <span>github</span>
+            <span class="block h-0.5 w-0 group-hover:w-full bg-accent-500 transition-all duration-300 mt-0.5"></span>
           </a>
         )}
         {author.instagram && (
           <a
             href={`https://instagram.com/${author.instagram}`}
-            class="no-underline-effect hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+            class="group no-underline-effect hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
-            instagram
+            <span>instagram</span>
+            <span class="block h-0.5 w-0 group-hover:w-full bg-accent-500 transition-all duration-300 mt-0.5"></span>
           </a>
         )}
         <a
           href={`mailto:${author.email}`}
-          class="no-underline-effect hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+          class="group no-underline-effect hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
         >
-          email
+          <span>email</span>
+          <span class="block h-0.5 w-0 group-hover:w-full bg-accent-500 transition-all duration-300 mt-0.5"></span>
         </a>
         <a
           href="/rss.xml"
-          class="no-underline-effect hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+          class="group no-underline-effect hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
         >
-          rss
+          <span>rss</span>
+          <span class="block h-0.5 w-0 group-hover:w-full bg-accent-500 transition-all duration-300 mt-0.5"></span>
         </a>
       </div>
 
